@@ -1,0 +1,150 @@
+﻿@model PruebaMvc.Models.Solicitante
+
+@{
+    SelectList lstSexo = ViewBag.Sexo; 
+    SelectList lstTipoDocumento = ViewBag.TipoDocumento;
+    SelectList lstTipoPoblacion = ViewBag.TipoPoblacion;
+    SelectList lstPais = ViewBag.Pais;
+    SelectList lstDepartamento = ViewBag.Departamento;
+    SelectList lstCiudad = ViewBag.Ciudad;
+}
+
+@using (Html.BeginForm("GuardarSolicitante", "Usuario", FormMethod.Post))
+{
+    <br />
+    <div class="panel panel-default">
+        <div class="panel-heading"><h4>Creación de cuenta: solicitante</h4></div>
+        <div class="panel-body">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <h4>Datos de usuario</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Usuario: @Html.EditorFor(model => model.NombreUsuario, new { @required = true })
+                    </td>
+                    <td>
+                        Correo electrónico: @Html.EditorFor(model => model.CorreoElectronico)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Contraseña: @Html.EditorFor(model => model.Clave)
+                    </td>
+                    <td>
+                        Confirmar contraseña: @Html.EditorFor(model => model.ConfirmarClave)
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h4>Datos de solicitante</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Documento: @Html.EditorFor(model => model.documento)
+                    </td>
+                    <td>
+                        Tipo de documento: @Html.DropDownListFor(model => model.id_tipo_documento, ViewBag.TipoDocumento as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Nombres:@Html.EditorFor(model => model.nombres)
+                    </td>
+                    <td>
+                        Apellidos:@Html.EditorFor(model => model.apellidos)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Correo electrónico:@Html.EditorFor(model => model.correo_electronico)
+                    </td>
+                    <td>
+                        Dirección:@Html.EditorFor(model => model.direccion)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Teléfono:@Html.EditorFor(model => model.correo_electronico)
+                    </td>
+                    <td>
+                        Sexo:@Html.DropDownListFor(model => model.sexo, ViewBag.Sexo as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                    </td>
+                    <td>
+                        Estrato: @Html.EditorFor(model => model.estrato)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Tipo de población:@Html.DropDownListFor(model => model.id_tipo_poblacion, ViewBag.TipoPoblacion as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                    </td>
+                    <td>
+                        Fecha de nacimiento:@Html.EditorFor(model => model.direccion)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Pais nacimiento: @Html.DropDownListFor(model => model.id_pais_nacimiento, ViewBag.Pais as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                    </td>
+                    <td>
+                        Departamento nacimiento: @Html.DropDownListFor(model => model.id_depatamento_nacimiento, ViewBag.Departamento as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                    </td>
+                    <td>
+                        Ciudad nacimiento: @Html.DropDownListFor(model => model.id_ciudad_nacimiento, ViewBag.Ciudad as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Pais residencia: @Html.DropDownListFor(model => model.id_pais_residencia, ViewBag.Pais as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                    </td>
+                    <td>
+                        Departamento residencia: @Html.DropDownListFor(model => model.id_depatamento_residencia, ViewBag.Departamento as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                    </td>
+                    <td>
+                        Ciudad residencia: @Html.DropDownListFor(model => model.id_ciudad_residencia, ViewBag.Ciudad as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h4>Información académica básica</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h4>Información académica superior</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h4>Información académica idiomas</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h4>Experiencia Laboral</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn btn-success">Crear</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+}
+
+
+
+
+
+
+

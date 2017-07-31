@@ -1,0 +1,84 @@
+﻿@model PruebaMvc.ModelsService.OfertaS
+@{
+
+}
+
+@using (Html.BeginForm("AplicarOferta", "Oferta", FormMethod.Post))
+{
+<div class="panel-heading">
+    <h3>Detalle de oferta</h3>
+    <h5>Información básica de oferta</h5>
+</div>
+<div class="panel-body">
+
+    @if (Model != null)
+    {
+        <table class="table table-striped">
+            <tr>
+                <td>
+                    <input type="hidden" value="@Model.id" name="idOferta" />
+                    @Html.HiddenFor(model => model.nombre)
+                    Nombre: @Html.DisplayFor(model => model.nombre)
+                </td>
+                <td>
+                    @Html.HiddenFor(model => model.tipoOferta)
+                    Tipo oferta: @Html.DisplayFor(model => model.tipoOferta)
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.HiddenFor(model => model.fechaInicio)
+                    Fecha inicio: @Html.DisplayFor(model => model.fechaInicio)
+                </td>
+                <td>
+                    @Html.HiddenFor(model => model.fechaFin)
+                    Fecha inicio: @Html.DisplayFor(model => model.fechaFin)
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    Descripción:
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    @Html.HiddenFor(model => model.descripcion)
+                    @Html.DisplayFor(model => model.descripcion)
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    Requisitos:
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    @Html.HiddenFor(model => model.requisitos)
+                    @Html.DisplayFor(model => model.requisitos)
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    Condiciones:
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    @Html.HiddenFor(model => model.condiciones)
+                    @Html.DisplayFor(model => model.condiciones)
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+<div class="panel-footer" style="text-align:right">
+    <input type="hidden" value="2" name="idSolicitante" />
+    <button type="submit" class="btn btn-success" >Aplicar a oferta</button>
+</div>
+<br />
+<h1 class="label label-success">@ViewBag.Message</h1>
+}

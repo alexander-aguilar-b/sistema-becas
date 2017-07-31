@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PortalBecasModelStoreContainer" CdmEntityContainer="PortalBecasEntities">
+    <EntitySetMapping Name="Formulario">
+      <EntityTypeMapping TypeName="PortalBecasModel.Formulario">
+        <MappingFragment StoreEntitySet="Formulario">
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="IdItem" ColumnName="IdItem" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="IdTipoControl" ColumnName="IdTipoControl" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormularioTemporal">
+      <EntityTypeMapping TypeName="PortalBecasModel.FormularioTemporal">
+        <MappingFragment StoreEntitySet="FormularioTemporal">
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="IdItem" ColumnName="IdItem" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="IdTipoControl" ColumnName="IdTipoControl" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RespuestaTemporal">
+      <EntityTypeMapping TypeName="PortalBecasModel.RespuestaTemporal">
+        <MappingFragment StoreEntitySet="RespuestaTemporal">
+          <ScalarProperty Name="IdRespuesta" ColumnName="IdRespuesta" />
+          <ScalarProperty Name="IdItem" ColumnName="IdItem" />
+          <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spCrearFormularioProceso" FunctionName="PortalBecasModel.Store.spCrearFormularioProceso" />
+    <FunctionImportMapping FunctionImportName="spEliminarItemFormularioTemporal" FunctionName="PortalBecasModel.Store.spEliminarItemFormularioTemporal" />
+    <FunctionImportMapping FunctionImportName="spInsertarItemFormularioTemporal" FunctionName="PortalBecasModel.Store.spInsertarItemFormularioTemporal" />
+    <FunctionImportMapping FunctionImportName="spObtenerFormularioTemporal" FunctionName="PortalBecasModel.Store.spObtenerFormularioTemporal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PortalBecasModel.spObtenerFormularioTemporal_Result">
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="IdItem" ColumnName="IdItem" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="IdTipoControl" ColumnName="IdTipoControl" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spObtenerRespuestaItem" FunctionName="PortalBecasModel.Store.spObtenerRespuestaItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PortalBecasModel.spObtenerRespuestaItem_Result">
+          <ScalarProperty Name="IdRespuesta" ColumnName="IdRespuesta" />
+          <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spObtenerTipoControl" FunctionName="PortalBecasModel.Store.spObtenerTipoControl">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PortalBecasModel.spObtenerTipoControl_Result">
+          <ScalarProperty Name="IdTipoControl" ColumnName="IdTipoControl" />
+          <ScalarProperty Name="TipoControl" ColumnName="TipoControl" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCalificarItems" FunctionName="PortalBecasModel.Store.spCalificarItems" />
+    <FunctionImportMapping FunctionImportName="spConsultarFormulario" FunctionName="PortalBecasModel.Store.spConsultarFormulario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PortalBecasModel.spConsultarFormulario_Result">
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCrearFormularioSolicitante" FunctionName="PortalBecasModel.Store.spCrearFormularioSolicitante" />
+    <FunctionImportMapping FunctionImportName="spEliminarFormulario" FunctionName="PortalBecasModel.Store.spEliminarFormulario" />
+    <FunctionImportMapping FunctionImportName="spConsultarUsuario" FunctionName="PortalBecasModel.Store.spConsultarUsuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PortalBecasModel.spConsultarUsuario_Result">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

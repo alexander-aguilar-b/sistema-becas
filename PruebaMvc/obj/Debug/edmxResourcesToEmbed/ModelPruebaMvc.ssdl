@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'C:\USERS\JOLAYA\DOCUMENTS\BDPRUEBA.MDF.dbo.Formulario' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Formulario">
+    <Key>
+      <PropertyRef Name="IdItem" />
+    </Key>
+    <Property Name="Cedula" Type="varchar" MaxLength="20" />
+    <Property Name="IdItem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item" Type="varchar" MaxLength="500" />
+    <Property Name="IdTipoControl" Type="int" />
+    <Property Name="Activo" Type="tinyint" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'C:\USERS\JOLAYA\DOCUMENTS\BDPRUEBA.MDF.dbo.FormularioTemporal' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="FormularioTemporal">
+    <Key>
+      <PropertyRef Name="IdItem" />
+    </Key>
+    <Property Name="Cedula" Type="varchar" MaxLength="20" />
+    <Property Name="IdItem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item" Type="varchar" MaxLength="500" />
+    <Property Name="IdTipoControl" Type="int" />
+    <Property Name="Activo" Type="tinyint" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'C:\USERS\JOLAYA\DOCUMENTS\BDPRUEBA.MDF.dbo.Proceso' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Proceso">
+          <Property Name="CodigoProceso" Type="varchar" MaxLength="20" />
+          <Property Name="NombreProceso" Type="varchar" MaxLength="20" />
+          <Property Name="IdItem" Type="int" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="NTModificacion" Type="varchar" MaxLength="20" />
+          <Property Name="FechaCreacion" Type="datetime" />
+        </EntityType>-->
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'C:\USERS\JOLAYA\DOCUMENTS\BDPRUEBA.MDF.dbo.Respuesta' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Respuesta">
+          <Property Name="IdRespuesta" Type="int" />
+          <Property Name="IdItem" Type="int" />
+          <Property Name="Respuesta" Type="varchar" MaxLength="20" />
+          <Property Name="Activo" Type="tinyint" />
+        </EntityType>-->
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'C:\USERS\JOLAYA\DOCUMENTS\BDPRUEBA.MDF.dbo.RespuestaTemporal' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="RespuestaTemporal">
+    <Key>
+      <PropertyRef Name="IdRespuesta" />
+    </Key>
+    <Property Name="IdRespuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdItem" Type="int" />
+    <Property Name="Respuesta" Type="varchar" MaxLength="20" />
+    <Property Name="Activo" Type="tinyint" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'C:\USERS\JOLAYA\DOCUMENTS\BDPRUEBA.MDF.dbo.TipoControl' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="TipoControl">
+          <Property Name="IdTipoControl" Type="int" />
+          <Property Name="TipoControl" Type="varchar" MaxLength="50" />
+          <Property Name="Activo" Type="tinyint" />
+        </EntityType>-->
+  <Function Name="FuncionSplit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="string" Type="varchar" Mode="In" />
+    <Parameter Name="delimiter" Type="char" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="splitdata" Type="varchar" MaxLength="500" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="spCrearFormularioProceso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cedula" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spEliminarItemFormularioTemporal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdItem" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spInsertarItemFormularioTemporal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CedulaUsuario" Type="varchar" Mode="In" />
+    <Parameter Name="Item" Type="varchar" Mode="In" />
+    <Parameter Name="IdTipoControl" Type="int" Mode="In" />
+    <Parameter Name="Respuestas" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spObtenerFormularioTemporal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cedula" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spObtenerRespuestaItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdItem" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spObtenerTipoControl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Formulario" EntityType="Self.Formulario" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Formulario].[Cedula] AS [Cedula], 
+    [Formulario].[IdItem] AS [IdItem], 
+    [Formulario].[Item] AS [Item], 
+    [Formulario].[IdTipoControl] AS [IdTipoControl], 
+    [Formulario].[Activo] AS [Activo]
+    FROM [dbo].[Formulario] AS [Formulario]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="FormularioTemporal" EntityType="Self.FormularioTemporal" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [FormularioTemporal].[Cedula] AS [Cedula], 
+    [FormularioTemporal].[IdItem] AS [IdItem], 
+    [FormularioTemporal].[Item] AS [Item], 
+    [FormularioTemporal].[IdTipoControl] AS [IdTipoControl], 
+    [FormularioTemporal].[Activo] AS [Activo]
+    FROM [dbo].[FormularioTemporal] AS [FormularioTemporal]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RespuestaTemporal" EntityType="Self.RespuestaTemporal" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RespuestaTemporal].[IdRespuesta] AS [IdRespuesta], 
+    [RespuestaTemporal].[IdItem] AS [IdItem], 
+    [RespuestaTemporal].[Respuesta] AS [Respuesta], 
+    [RespuestaTemporal].[Activo] AS [Activo]
+    FROM [dbo].[RespuestaTemporal] AS [RespuestaTemporal]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

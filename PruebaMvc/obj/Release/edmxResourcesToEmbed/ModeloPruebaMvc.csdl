@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PortalBecasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Formulario">
+    <Key>
+      <PropertyRef Name="IdItem" />
+    </Key>
+    <Property Name="Cedula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IdItem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Item" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IdTipoControl" Type="Int32" />
+    <Property Name="Activo" Type="Byte" />
+  </EntityType>
+  <EntityType Name="FormularioTemporal">
+    <Key>
+      <PropertyRef Name="IdItem" />
+    </Key>
+    <Property Name="Cedula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IdItem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Item" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IdTipoControl" Type="Int32" />
+    <Property Name="Activo" Type="Byte" />
+  </EntityType>
+  <EntityType Name="RespuestaTemporal">
+    <Key>
+      <PropertyRef Name="IdRespuesta" />
+    </Key>
+    <Property Name="IdRespuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdItem" Type="Int32" />
+    <Property Name="Respuesta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Activo" Type="Byte" />
+  </EntityType>
+  <EntityContainer Name="PortalBecasEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Formulario" EntityType="Self.Formulario" />
+    <EntitySet Name="FormularioTemporal" EntityType="Self.FormularioTemporal" />
+    <EntitySet Name="RespuestaTemporal" EntityType="Self.RespuestaTemporal" />
+    <FunctionImport Name="spCrearFormularioProceso">
+      <Parameter Name="Cedula" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spEliminarItemFormularioTemporal">
+      <Parameter Name="IdItem" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spInsertarItemFormularioTemporal">
+      <Parameter Name="CedulaUsuario" Mode="In" Type="String" />
+      <Parameter Name="Item" Mode="In" Type="String" />
+      <Parameter Name="IdTipoControl" Mode="In" Type="Int32" />
+      <Parameter Name="Respuestas" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spObtenerFormularioTemporal" ReturnType="Collection(PortalBecasModel.spObtenerFormularioTemporal_Result)">
+      <Parameter Name="Cedula" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spObtenerRespuestaItem" ReturnType="Collection(PortalBecasModel.spObtenerRespuestaItem_Result)">
+      <Parameter Name="IdItem" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spObtenerTipoControl" ReturnType="Collection(PortalBecasModel.spObtenerTipoControl_Result)" />
+    <FunctionImport Name="spCalificarItems">
+      <Parameter Name="Cedula" Mode="In" Type="String" />
+      <Parameter Name="IdItem" Mode="In" Type="Int32" />
+      <Parameter Name="Valor" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spConsultarFormulario" ReturnType="Collection(PortalBecasModel.spConsultarFormulario_Result)">
+      <Parameter Name="Cedula" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spCrearFormularioSolicitante">
+      <Parameter Name="Cedula" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spEliminarFormulario">
+      <Parameter Name="Cedula" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spConsultarUsuario" ReturnType="Collection(PortalBecasModel.spConsultarUsuario_Result)">
+      <Parameter Name="NombreUsuario" Mode="In" Type="String" />
+      <Parameter Name="Clave" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="spObtenerFormularioTemporal_Result">
+    <Property Type="String" Name="Cedula" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="IdItem" Nullable="false" />
+    <Property Type="String" Name="Item" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="IdTipoControl" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="spObtenerRespuestaItem_Result">
+    <Property Type="Int32" Name="IdRespuesta" Nullable="false" />
+    <Property Type="String" Name="Respuesta" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="spObtenerTipoControl_Result">
+    <Property Type="Int32" Name="IdTipoControl" Nullable="true" />
+    <Property Type="String" Name="TipoControl" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="spConsultarFormulario_Result">
+    <Property Type="String" Name="Cedula" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Item" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Valor" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="spConsultarUsuario_Result">
+    <Property Type="Int32" Name="IdUsuario" Nullable="true" />
+    <Property Type="String" Name="NombreUsuario" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Clave" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Rol" Nullable="true" MaxLength="10" />
+  </ComplexType>
+</Schema>

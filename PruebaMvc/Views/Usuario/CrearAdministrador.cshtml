@@ -1,0 +1,79 @@
+﻿@model PruebaMvc.Models.Administrador
+
+@{
+    SelectList lstSede = ViewBag.Sede;
+}
+
+@using (Html.BeginForm("GuardarAdministrador", "Usuario", FormMethod.Post))
+{
+    <br />
+    <div class="panel panel-default">
+        <div class="panel-heading"><h4>Creación de cuenta: administrador</h4></div>
+        <div class="panel-body">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <h4>Datos de usuario</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Usuario: @Html.EditorFor(model => model.NombreUsuario)
+                    </td>
+                    <td>
+                        Correo electrónico: @Html.EditorFor(model => model.CorreoElectronico)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Contraseña: @Html.EditorFor(model => model.Clave)
+                    </td>
+                    <td>
+                        Confirmar contraseña: @Html.EditorFor(model => model.ConfirmarClave)
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h4>Datos de funcionario</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Nombres: @Html.EditorFor(model => model.Nombres)
+                    </td>
+                    <td>
+                        Apellidos: @Html.EditorFor(model => model.Apellidos)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Cargo: @Html.EditorFor(model => model.Cargo)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Sede
+                        @Html.DropDownListFor(model => model.IdSede, ViewBag.Sede as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn btn-success">Crear</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+}
+
+
+
+
+
+
+

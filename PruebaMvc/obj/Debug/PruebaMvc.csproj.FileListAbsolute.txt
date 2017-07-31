@@ -1,0 +1,261 @@
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\roslyn\csc.exe
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\roslyn\System.Collections.Immutable.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\roslyn\vbc.exe
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\roslyn\VBCSCompiler.exe
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\roslyn\VBCSCompiler.exe.config
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\PruebaMvc.dll.config
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\PruebaMvc.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\PruebaMvc.pdb
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\EntityFramework.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\EntityFramework.SqlServer.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\Microsoft.Web.Infrastructure.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\System.Web.Helpers.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\System.Web.Mvc.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\System.Web.Razor.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\System.Web.Webpages.Deployment.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\System.Web.Webpages.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\System.Web.Webpages.Razor.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\EntityFramework.xml
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\EntityFramework.SqlServer.xml
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\System.Web.Razor.xml
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\System.Web.Webpages.xml
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\System.Web.Webpages.Deployment.xml
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\System.Web.Webpages.Razor.xml
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\System.Web.Helpers.xml
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\System.Web.Mvc.xml
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\es\System.Web.Razor.resources.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\es\System.Web.Webpages.resources.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\es\System.Web.Webpages.Deployment.resources.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\es\System.Web.Webpages.Razor.resources.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\es\System.Web.Helpers.resources.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\bin\es\System.Web.Mvc.resources.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\obj\Debug\PruebaMvc.dll
+c:\users\jolaya\documents\visual studio 2015\Projects\PruebaMvc\PruebaMvc\obj\Debug\PruebaMvc.pdb
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\roslyn\csc.exe
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\roslyn\vbc.exe
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\roslyn\VBCSCompiler.exe
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\PruebaMvc.dll.config
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\PruebaMvc.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\PruebaMvc.pdb
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\EntityFramework.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\EntityFramework.SqlServer.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\System.Web.Helpers.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\System.Web.Mvc.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\System.Web.Razor.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\System.Web.Webpages.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\System.Web.Webpages.Razor.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\EntityFramework.xml
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\EntityFramework.SqlServer.xml
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\System.Web.Razor.xml
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\System.Web.Webpages.xml
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\System.Web.Webpages.Razor.xml
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\System.Web.Helpers.xml
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\System.Web.Mvc.xml
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\es\System.Web.Razor.resources.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\es\System.Web.Webpages.resources.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\obj\Debug\PruebaMvc.csprojResolveAssemblyReference.cache
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\obj\Debug\PruebaMvc.dll
+C:\Users\Johann\Desktop\PruebaMvc\PruebaMvc\obj\Debug\PruebaMvc.pdb
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\roslyn\csc.exe
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\roslyn\vbc.exe
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\roslyn\VBCSCompiler.exe
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\PruebaMvc.dll.config
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\PruebaMvc.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\PruebaMvc.pdb
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\EntityFramework.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\EntityFramework.SqlServer.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\System.Web.Helpers.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\System.Web.Mvc.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\System.Web.Razor.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\System.Web.Webpages.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\System.Web.Webpages.Razor.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\EntityFramework.xml
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\EntityFramework.SqlServer.xml
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\System.Web.Razor.xml
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\System.Web.Webpages.xml
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\System.Web.Webpages.Razor.xml
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\System.Web.Helpers.xml
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\System.Web.Mvc.xml
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\es\System.Web.Razor.resources.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\es\System.Web.Webpages.resources.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\obj\Debug\PruebaMvc.csprojResolveAssemblyReference.cache
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\obj\Debug\PruebaMvc.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO\PruebaMvc\obj\Debug\PruebaMvc.pdb
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\csc.exe
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\vbc.exe
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\VBCSCompiler.exe
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\PruebaMvc.dll.config
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\PruebaMvc.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\PruebaMvc.pdb
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\EntityFramework.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\EntityFramework.SqlServer.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Helpers.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Mvc.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Razor.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Webpages.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Webpages.Razor.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\EntityFramework.xml
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\EntityFramework.SqlServer.xml
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Razor.xml
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Webpages.xml
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Webpages.Razor.xml
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Helpers.xml
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Mvc.xml
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\es\System.Web.Razor.resources.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\es\System.Web.Webpages.resources.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\obj\Debug\PruebaMvc.csprojResolveAssemblyReference.cache
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\obj\Debug\PruebaMvc.dll
+C:\Users\Johann\Desktop\PruebaMvc - ADO - Aut\PruebaMvc\obj\Debug\PruebaMvc.pdb
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\csc.exe
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\vbc.exe
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\VBCSCompiler.exe
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\PruebaMvc.dll.config
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\PruebaMvc.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\PruebaMvc.pdb
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\EntityFramework.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\EntityFramework.SqlServer.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Helpers.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Mvc.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Razor.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Webpages.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Webpages.Razor.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\EntityFramework.xml
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\EntityFramework.SqlServer.xml
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Razor.xml
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Webpages.xml
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Webpages.Razor.xml
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Helpers.xml
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Mvc.xml
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\es\System.Web.Razor.resources.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\es\System.Web.Webpages.resources.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\obj\Debug\PruebaMvc.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\obj\Debug\PruebaMvc.pdb
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\obj\Debug\PruebaMvc.csprojResolveAssemblyReference.cache
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\Newtonsoft.Json.dll
+C:\Users\Johann\Desktop\Prueba Capa Datos\PruebaMvc - ADO - Aut\PruebaMvc\bin\Newtonsoft.Json.xml
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\obj\Debug\PruebaMvc.csprojResolveAssemblyReference.cache
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\obj\Debug\PruebaMvc.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\obj\Debug\PruebaMvc.pdb
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\csc.exe
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\vbc.exe
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\VBCSCompiler.exe
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\PruebaMvc.dll.config
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\PruebaMvc.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\PruebaMvc.pdb
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\EntityFramework.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\EntityFramework.SqlServer.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\Newtonsoft.Json.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Helpers.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Mvc.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Razor.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Webpages.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Webpages.Razor.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\EntityFramework.xml
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\EntityFramework.SqlServer.xml
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\Newtonsoft.Json.xml
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Razor.xml
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Webpages.xml
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Webpages.Razor.xml
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Helpers.xml
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\System.Web.Mvc.xml
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\es\System.Web.Razor.resources.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\es\System.Web.Webpages.resources.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Johann\Desktop\ProyectoFinalMVC\PruebaMvc - ADO - Aut\PruebaMvc\bin\es\System.Web.Mvc.resources.dll

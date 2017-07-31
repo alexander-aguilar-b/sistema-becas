@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="FuncionSplit_Result">
+    <Property Name="splitdata" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </ComplexType>
+  <EntityType Name="Formulario">
+    <Key>
+      <PropertyRef Name="IdItem" />
+    </Key>
+    <Property Name="Cedula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IdItem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Item" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IdTipoControl" Type="Int32" />
+    <Property Name="Activo" Type="Byte" />
+  </EntityType>
+  <EntityType Name="FormularioTemporal">
+    <Key>
+      <PropertyRef Name="IdItem" />
+    </Key>
+    <Property Name="Cedula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IdItem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Item" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IdTipoControl" Type="Int32" />
+    <Property Name="Activo" Type="Byte" />
+  </EntityType>
+  <EntityType Name="RespuestaTemporal">
+    <Key>
+      <PropertyRef Name="IdRespuesta" />
+    </Key>
+    <Property Name="IdRespuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdItem" Type="Int32" />
+    <Property Name="Respuesta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Activo" Type="Byte" />
+  </EntityType>
+  <EntityContainer Name="ModelPruebaMvc" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Formulario" EntityType="Self.Formulario" />
+    <EntitySet Name="FormularioTemporal" EntityType="Self.FormularioTemporal" />
+    <EntitySet Name="RespuestaTemporal" EntityType="Self.RespuestaTemporal" />
+    <FunctionImport Name="FuncionSplit" IsComposable="true" ReturnType="Collection(Model.FuncionSplit_Result)">
+      <Parameter Name="string" Mode="In" Type="String" />
+      <Parameter Name="delimiter" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spCrearFormularioProceso">
+      <Parameter Name="Cedula" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spEliminarItemFormularioTemporal">
+      <Parameter Name="IdItem" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spInsertarItemFormularioTemporal">
+      <Parameter Name="CedulaUsuario" Mode="In" Type="String" />
+      <Parameter Name="Item" Mode="In" Type="String" />
+      <Parameter Name="IdTipoControl" Mode="In" Type="Int32" />
+      <Parameter Name="Respuestas" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spObtenerFormularioTemporal" ReturnType="Collection(Model.spObtenerFormularioTemporal_Result)">
+      <Parameter Name="Cedula" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spObtenerRespuestaItem" ReturnType="Collection(String)">
+      <Parameter Name="IdItem" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spObtenerTipoControl" ReturnType="Collection(Model.spObtenerTipoControl_Result)" />
+  </EntityContainer>
+  <ComplexType Name="spObtenerFormularioTemporal_Result">
+    <Property Type="String" Name="Cedula" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="IdItem" Nullable="false" />
+    <Property Type="String" Name="Item" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="IdTipoControl" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="spObtenerTipoControl_Result">
+    <Property Type="Int32" Name="IdTipoControl" Nullable="true" />
+    <Property Type="String" Name="TipoControl" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

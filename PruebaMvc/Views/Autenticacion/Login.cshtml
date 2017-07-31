@@ -1,0 +1,39 @@
+﻿@model PruebaMvc.Models.Usuario
+@{
+    ViewBag.Title = "Login";
+}
+
+
+@using (Html.BeginForm())
+{
+
+    <br />
+    <br />
+    <div class="panel panel-default" style="width:30%">
+        <div class="panel-heading">Login</div>
+        <div class="panel-body">
+            <div>
+                Nombre usuario
+            </div>
+            <div>
+                @Html.EditorFor(model => model.NombreUsuario)
+                @Html.ValidationMessageFor(model => model.NombreUsuario)
+            </div>
+
+            <div>
+                Contraseña
+            </div>
+            <div>
+                @Html.PasswordFor(model => model.Clave)
+                @Html.ValidationMessageFor(model => model.Clave)
+            </div>
+            <br />
+            <p>
+                <input type="submit" class="btn btn-success" value="Ingresar" />
+            </p>
+        </div>
+    </div>
+    <br />
+    @Html.ValidationSummary(true)
+}
+

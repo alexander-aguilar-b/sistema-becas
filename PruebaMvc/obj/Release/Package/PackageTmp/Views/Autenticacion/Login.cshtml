@@ -1,0 +1,31 @@
+﻿@model PruebaMvc.Models.Usuario
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div>
+        @Html.LabelFor(model => model.NombreUsuario)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.NombreUsuario)
+        @Html.ValidationMessageFor(model => model.NombreUsuario)
+    </div>
+
+    <div>
+        @Html.LabelFor(model => model.Clave)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.Clave)
+        @Html.ValidationMessageFor(model => model.Clave)
+    </div>
+    <p>
+        <input type="submit" value="Ingresar" />
+    </p>
+}
+

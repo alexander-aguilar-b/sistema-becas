@@ -1,0 +1,176 @@
+﻿@model PruebaMvc.Models.Items
+@{
+    ViewBag.Title = "Crear Formulario";
+}
+
+
+<h3>Crear Formulario</h3>
+<br />
+<h2 class="label label-success">@ViewBag.Message</h2>
+<br />
+<br />
+
+@using (Html.BeginForm("AgregarItem", "CrearFormulario", FormMethod.Post))
+{ 
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table>
+                <tr>
+                    <td>
+                        <input type="hidden" name="cedula" value="1023" />
+                        Ingrese el item
+                    </td>
+                    <td>
+                        <input type="text" id="nombreItemId" name="nombreItem">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Tipo de respuesta
+                    </td>
+                    <td>
+                        <select id="tipoControl" name="tipoControl">
+                            <option value="1">Titulo</option>
+                            <option value="2">Descripción</option>
+                            <option value="3">Comentario</option>
+                            <option value="4">Caja de texto</option>
+                            <option value="5">Lista desplegable</option>
+                            <option value="6">Botón de radio</option>
+                            <option value="7">Selección múltiple</option>
+                            <option value="8">Documento adjunto</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Ingrese delimitador
+                    </td>
+                    <td>
+                        <input type="text" id="tipoDelimitadorId" name="tipoDelimitador">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Opciones
+                    </td>
+                    <td>
+                        <input type="text" id="opcionesId" name="opciones">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="left">
+                        <button type="submit" class="btn btn-primary" name="action:AgregarItem">Guardar Item</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Vista Previa</div>
+        <div class="panel-body">
+
+            @if (Model != null)
+            {
+                <table>
+                    <tr>
+                        <td>
+                            <br />
+                        </td>
+                    </tr>
+                    @for (int i = 0; i < Model.lstItems.Count; i++)
+                    {
+                        <tr>
+                            <td>
+                                @Html.HiddenFor(model => model.lstItems[i].Cedula)
+                                @Html.HiddenFor(model => model.lstItems[i].IdTipoControl)
+                                @Html.HiddenFor(model => model.lstItems[i].Descripcion)
+                            </td>
+                        </tr>
+                        <tr>
+                            @if (Model.lstItems[i].IdTipoControl < 4)
+                            {
+                                <td colspan="2">
+                                    @Html.LabelFor(model => model.lstItems[i].Descripcion, Model.lstItems[i].Descripcion)
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    @Html.LabelFor(model => model.lstItems[i].Descripcion, Model.lstItems[i].Descripcion)
+                                </td>
+                                <td>
+                                    @switch (Model.lstItems[i].IdTipoControl)
+                                    {
+                                        case 4:
+                                            @Html.EditorFor(model => model.lstItems[i].valor, new { htmlAttributes = new { @class = "form-control" } })
+                                            break;
+                                        case 5:
+                                            for (int j = 0; j < Model.lstItems[i].lstRespuestas.Count; j++)
+                                            {
+                                                @Html.HiddenFor(model => model.lstItems[i].lstRespuestas[j].respuesta)
+                                            }
+                                            @Html.DropDownListFor(model => model.lstItems[i].valor, new SelectList(Model.lstItems[i].lstRespuestas.Select(l => l.respuesta)), "Seleccione", new { @class = "form-control" })
+                                            break;
+                                        case 6:
+                                            for (int j = 0; j < Model.lstItems[i].lstRespuestas.Count; j++)
+                                            {
+                                                @Html.HiddenFor(model => model.lstItems[i].lstRespuestas[j].respuesta)
+                                                @Html.RadioButtonFor(model => model.lstItems[i].valor, Model.lstItems[i].lstRespuestas[j].respuesta);
+                                                @Html.Label(Model.lstItems[i].lstRespuestas[j].respuesta)
+                                            }
+                                            break;
+                                        case 7:
+                                            for (int j = 0; j < Model.lstItems[i].lstRespuestas.Count; j++)
+                                            {
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            @Html.HiddenFor(model => model.lstItems[i].lstRespuestas[j].respuesta)
+                                                            @Html.CheckBoxFor(model => Model.lstItems[i].lstRespuestas[j].seleccion)
+                                                            @Html.Label(Model.lstItems[i].lstRespuestas[j].respuesta)
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            }
+                                            break;
+                                        case 8:
+                                            @Html.TextBox("file", "", new { type = "file" })
+                                            break;
+                                    }
+                                </td>
+                            }
+                           @*<td width="5%">
+                                <input type="hidden" value="@Model.lstItems[i].Descripcion" name="descripcion" id="@i.ToString()" />
+                                <input type="submit" value="@Model.lstItems[i].Descripcion" name="action:BorrarItem" />
+
+                                @Html.ActionLink("Borrar", "BorrarItem", new { IdTipoControl = Model.lstItems[i].IdTipoControl},"btn btn - danger"
+                            </td>*@
+
+                        </tr>
+                    }
+                    <tr>
+                        <td>
+                            <br />
+                            <br />
+                        </td>
+                    </tr>
+                </table>
+            }
+
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" name="action:GuardarFormulario">Guardar Formulario</button>
+    <button type="submit" class="btn btn-danger" name="action:BorrarFormulario">Borrar formulario</button>
+}
+

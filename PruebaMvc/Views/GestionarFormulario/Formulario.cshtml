@@ -1,0 +1,65 @@
+﻿@model PruebaMvc.Models.Items
+@{
+    ViewBag.Title = "Gestionar Formulario";
+}
+
+@using (Html.BeginForm("Guardar", "GestionarFormulario", FormMethod.Post, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <br />
+    <br />
+    <div class="panel panel-default">
+        <div class="panel-heading">Gestionar Formulario</div>
+        <div class="panel-body">
+            <table>
+                @for (int i = 0; i < Model.lstItems.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Html.HiddenFor(model => model.lstItems[i].Cedula)
+                            @Html.HiddenFor(model => model.lstItems[i].Id)
+                            @Html.HiddenFor(model => model.lstItems[i].IdTipoControl)
+                            @Html.LabelFor(model => model.lstItems[i].Descripcion, Model.lstItems[i].Descripcion)
+                        </td>
+                        <td>
+                            @switch (Model.lstItems[i].IdTipoControl)
+                            {
+                                case 4:
+                                    @Html.EditorFor(model => model.lstItems[i].valor)
+                                    break;
+                                case 5:
+                                    @Html.DropDownListFor(model => model.lstItems[i].valor, new SelectList(Model.lstItems[i].lstRespuestas.Select(l => l.respuesta)), "Seleccione", new { @class = "form-control" })
+                                    break;
+                                case 6:
+                                    for (int j = 0; j < Model.lstItems[i].lstRespuestas.Count; j++)
+                                    {
+                                        @Html.RadioButtonFor(model => model.lstItems[i].valor, Model.lstItems[i].lstRespuestas[j].respuesta);
+                                        @Html.Label(Model.lstItems[i].lstRespuestas[j].respuesta)
+                                    }
+                                    break;
+                                case 7:
+                                    for (int j = 0; j < Model.lstItems[i].lstRespuestas.Count; j++)
+                                    {
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    @Html.HiddenFor(model => model.lstItems[i].lstRespuestas[j].respuesta)
+                                                    @Html.CheckBoxFor(model => Model.lstItems[i].lstRespuestas[j].seleccion)
+                                                    @Html.Label(Model.lstItems[i].lstRespuestas[j].respuesta)
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    }
+                                    break;
+                                case 8:
+                                    @Html.TextBox("file", "", new { type = "file" })
+                                    break;
+                            }
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Guardar</button>
+}

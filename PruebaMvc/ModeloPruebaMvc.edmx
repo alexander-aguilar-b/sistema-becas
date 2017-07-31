@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PortalBecasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PortalBecas.dbo.Formulario' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Formulario">
+          <Key>
+            <PropertyRef Name="IdItem" />
+          </Key>
+          <Property Name="Cedula" Type="varchar" MaxLength="20" />
+          <Property Name="IdItem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Item" Type="varchar" MaxLength="500" />
+          <Property Name="IdTipoControl" Type="int" />
+          <Property Name="Activo" Type="tinyint" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PortalBecas.dbo.FormularioTemporal' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="FormularioTemporal">
+          <Key>
+            <PropertyRef Name="IdItem" />
+          </Key>
+          <Property Name="Cedula" Type="varchar" MaxLength="20" />
+          <Property Name="IdItem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Item" Type="varchar" MaxLength="500" />
+          <Property Name="IdTipoControl" Type="int" />
+          <Property Name="Activo" Type="tinyint" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PortalBecas.dbo.Oferta' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Oferta">
+          <Key>
+            <PropertyRef Name="IdOferta" />
+          </Key>
+          <Property Name="IdOferta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdOferente" Type="int" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="500" />
+          <Property Name="FechaInicio" Type="date" />
+          <Property Name="FechaFin" Type="date" />
+          <Property Name="IdTipoOferta" Type="int" />
+          <Property Name="Requisitos" Type="varchar" MaxLength="500" />
+          <Property Name="Condiciones" Type="varchar" MaxLength="500" />
+          <Property Name="InformacionAdicional" Type="varchar" MaxLength="500" />
+          <Property Name="FechaCreacion" Type="date" />
+          <Property Name="IdEstadoSistema" Type="int" />
+        </EntityType>
+        <EntityType Name="Postulacion">
+          <Key>
+            <PropertyRef Name="IdPostulacion" />
+          </Key>
+          <Property Name="IdPostulacion" Type="int" Nullable="false" />
+          <Property Name="IdSolicitante" Type="int" Nullable="false" />
+          <Property Name="IdOferta" Type="int" />
+          <Property Name="FechaPostulacion" Type="date" />
+          <Property Name="IdEstadoPostulacion" Type="int" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PortalBecas.dbo.RespuestaTemporal' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="RespuestaTemporal">
+          <Key>
+            <PropertyRef Name="IdRespuesta" />
+          </Key>
+          <Property Name="IdRespuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdItem" Type="int" />
+          <Property Name="Respuesta" Type="varchar" MaxLength="20" />
+          <Property Name="Activo" Type="tinyint" />
+        </EntityType>
+        <Function Name="spAplicarOferta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdOferta" Type="int" Mode="In" />
+          <Parameter Name="IdSolicitante" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spCalificarItems" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cedula" Type="varchar" Mode="In" />
+          <Parameter Name="IdItem" Type="int" Mode="In" />
+          <Parameter Name="Valor" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spConsultarFormulario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cedula" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spConsultarOferta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdOferta" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spConsultarOfertaOferente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdOferente" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spConsultarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NombreUsuario" Type="varchar" Mode="In" />
+          <Parameter Name="Clave" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spCrearFormularioProceso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cedula" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spCrearFormularioSolicitante" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cedula" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spEliminarFormulario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cedula" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spEliminarItemFormularioTemporal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdItem" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spInsertarItemFormularioTemporal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CedulaUsuario" Type="varchar" Mode="In" />
+          <Parameter Name="Item" Type="varchar" Mode="In" />
+          <Parameter Name="IdTipoControl" Type="int" Mode="In" />
+          <Parameter Name="Respuestas" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spObtenerFormularioTemporal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cedula" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spObtenerRespuestaItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdItem" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spObtenerTipoControl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="PortalBecasModelStoreContainer">
+          <EntitySet Name="Postulacion" EntityType="Self.Postulacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Formulario" EntityType="Self.Formulario" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Formulario].[Cedula] AS [Cedula], 
+    [Formulario].[IdItem] AS [IdItem], 
+    [Formulario].[Item] AS [Item], 
+    [Formulario].[IdTipoControl] AS [IdTipoControl], 
+    [Formulario].[Activo] AS [Activo]
+    FROM [dbo].[Formulario] AS [Formulario]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="FormularioTemporal" EntityType="Self.FormularioTemporal" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [FormularioTemporal].[Cedula] AS [Cedula], 
+    [FormularioTemporal].[IdItem] AS [IdItem], 
+    [FormularioTemporal].[Item] AS [Item], 
+    [FormularioTemporal].[IdTipoControl] AS [IdTipoControl], 
+    [FormularioTemporal].[Activo] AS [Activo]
+    FROM [dbo].[FormularioTemporal] AS [FormularioTemporal]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Oferta" EntityType="Self.Oferta" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Oferta].[IdOferta] AS [IdOferta], 
+    [Oferta].[IdOferente] AS [IdOferente], 
+    [Oferta].[Nombre] AS [Nombre], 
+    [Oferta].[Descripcion] AS [Descripcion], 
+    [Oferta].[FechaInicio] AS [FechaInicio], 
+    [Oferta].[FechaFin] AS [FechaFin], 
+    [Oferta].[IdTipoOferta] AS [IdTipoOferta], 
+    [Oferta].[Requisitos] AS [Requisitos], 
+    [Oferta].[Condiciones] AS [Condiciones], 
+    [Oferta].[InformacionAdicional] AS [InformacionAdicional], 
+    [Oferta].[FechaCreacion] AS [FechaCreacion], 
+    [Oferta].[IdEstadoSistema] AS [IdEstadoSistema]
+    FROM [dbo].[Oferta] AS [Oferta]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="RespuestaTemporal" EntityType="Self.RespuestaTemporal" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [RespuestaTemporal].[IdRespuesta] AS [IdRespuesta], 
+    [RespuestaTemporal].[IdItem] AS [IdItem], 
+    [RespuestaTemporal].[Respuesta] AS [Respuesta], 
+    [RespuestaTemporal].[Activo] AS [Activo]
+    FROM [dbo].[RespuestaTemporal] AS [RespuestaTemporal]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PortalBecasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Formulario">
+          <Key>
+            <PropertyRef Name="IdItem" />
+          </Key>
+          <Property Name="Cedula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IdItem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Item" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="IdTipoControl" Type="Int32" />
+          <Property Name="Activo" Type="Byte" />
+        </EntityType>
+        <EntityType Name="FormularioTemporal">
+          <Key>
+            <PropertyRef Name="IdItem" />
+          </Key>
+          <Property Name="Cedula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IdItem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Item" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="IdTipoControl" Type="Int32" />
+          <Property Name="Activo" Type="Byte" />
+        </EntityType>
+        <EntityType Name="RespuestaTemporal">
+          <Key>
+            <PropertyRef Name="IdRespuesta" />
+          </Key>
+          <Property Name="IdRespuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdItem" Type="Int32" />
+          <Property Name="Respuesta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Activo" Type="Byte" />
+        </EntityType>
+        <EntityContainer Name="PortalBecasEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Formulario" EntityType="Self.Formulario" />
+          <EntitySet Name="FormularioTemporal" EntityType="Self.FormularioTemporal" />
+          <EntitySet Name="RespuestaTemporal" EntityType="Self.RespuestaTemporal" />
+          <FunctionImport Name="spCrearFormularioProceso">
+          <Parameter Name="Cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spEliminarItemFormularioTemporal">
+          <Parameter Name="IdItem" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spInsertarItemFormularioTemporal">
+            <Parameter Name="CedulaUsuario" Mode="In" Type="String" />
+            <Parameter Name="Item" Mode="In" Type="String" />
+            <Parameter Name="IdTipoControl" Mode="In" Type="Int32" />
+            <Parameter Name="Respuestas" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spObtenerFormularioTemporal" ReturnType="Collection(PortalBecasModel.spObtenerFormularioTemporal_Result)">
+          <Parameter Name="Cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spObtenerRespuestaItem" ReturnType="Collection(PortalBecasModel.spObtenerRespuestaItem_Result)">
+          <Parameter Name="IdItem" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spObtenerTipoControl" ReturnType="Collection(PortalBecasModel.spObtenerTipoControl_Result)" />
+          <FunctionImport Name="spCalificarItems">
+            <Parameter Name="Cedula" Mode="In" Type="String" />
+            <Parameter Name="IdItem" Mode="In" Type="Int32" />
+            <Parameter Name="Valor" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spConsultarFormulario" ReturnType="Collection(PortalBecasModel.spConsultarFormulario_Result)">
+          <Parameter Name="Cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spCrearFormularioSolicitante">
+          <Parameter Name="Cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spEliminarFormulario">
+          <Parameter Name="Cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spConsultarUsuario" ReturnType="Collection(PortalBecasModel.spConsultarUsuario_Result)">
+            <Parameter Name="NombreUsuario" Mode="In" Type="String" />
+            <Parameter Name="Clave" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Oferta" EntityType="PortalBecasModel.Oferta" />
+          <EntitySet Name="Postulacion" EntityType="PortalBecasModel.Postulacion" />
+          <EntitySet Name="Postulacion1Set" EntityType="PortalBecasModel.Postulacion1" />
+          <FunctionImport Name="spAplicarOferta">
+            <Parameter Name="IdOferta" Mode="In" Type="Int32" />
+            <Parameter Name="IdSolicitante" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spConsultarOferta" ReturnType="Collection(PortalBecasModel.spConsultarOferta_Result)">
+            <Parameter Name="IdOferta" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spConsultarOfertaOferente" ReturnType="Collection(PortalBecasModel.spConsultarOfertaOferente_Result)">
+            <Parameter Name="IdOferente" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="spObtenerFormularioTemporal_Result">
+          <Property Type="String" Name="Cedula" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="IdItem" Nullable="false" />
+          <Property Type="String" Name="Item" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="IdTipoControl" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spObtenerRespuestaItem_Result">
+          <Property Type="Int32" Name="IdRespuesta" Nullable="false" />
+          <Property Type="String" Name="Respuesta" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="spObtenerTipoControl_Result">
+          <Property Type="Int32" Name="IdTipoControl" Nullable="true" />
+          <Property Type="String" Name="TipoControl" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="spConsultarFormulario_Result">
+          <Property Type="String" Name="Cedula" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Item" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Valor" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="spConsultarUsuario_Result">
+          <Property Type="Int32" Name="IdUsuario" Nullable="true" />
+          <Property Type="String" Name="NombreUsuario" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Clave" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Rol" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <EntityType Name="Oferta">
+          <Key>
+            <PropertyRef Name="IdOferta" />
+          </Key>
+          <Property Name="IdOferta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdOferente" Type="Int32" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FechaInicio" Type="DateTime" Precision="0" />
+          <Property Name="FechaFin" Type="DateTime" Precision="0" />
+          <Property Name="IdTipoOferta" Type="Int32" />
+          <Property Name="Requisitos" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Condiciones" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="InformacionAdicional" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Precision="0" />
+          <Property Name="IdEstadoSistema" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Postulacion">
+          <Key>
+            <PropertyRef Name="IdSolicitante" />
+            <PropertyRef Name="IdPostulacion" />
+          </Key>
+          <Property Name="IdSolicitante" Type="Int32" Nullable="false" />
+          <Property Name="IdOferta" Type="Int32" />
+          <Property Name="FechaPostulacion" Type="DateTime" Precision="0" />
+          <Property Name="IdEstadoPostulacion" Type="Int32" />
+          <Property Name="IdPostulacion" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Postulacion1">
+          <Key>
+            <PropertyRef Name="IdPostulacion" />
+          </Key>
+          <Property Name="IdPostulacion" Type="Int32" Nullable="false" />
+          <Property Name="IdSolicitante" Type="Int32" Nullable="false" />
+          <Property Name="IdOferta" Type="Int32" />
+          <Property Name="FechaPostulacion" Type="DateTime" Precision="0" />
+          <Property Name="IdEstadoPostulacion" Type="Int32" />
+        </EntityType>
+        <ComplexType Name="spConsultarOferta_Result">
+          <Property Type="Int32" Name="IdOferta" Nullable="false" />
+          <Property Type="Int32" Name="IdOferente" Nullable="true" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="FechaInicio" Nullable="true" />
+          <Property Type="DateTime" Name="FechaFin" Nullable="true" />
+          <Property Type="Int32" Name="IdTipoOferta" Nullable="true" />
+          <Property Type="String" Name="Requisitos" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Condiciones" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="InformacionAdicional" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="FechaCreacion" Nullable="true" />
+          <Property Type="Int32" Name="IdEstadoSistema" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spConsultarOfertaOferente_Result">
+          <Property Type="Int32" Name="IdOferta" Nullable="false" />
+          <Property Type="Int32" Name="IdOferente" Nullable="true" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="FechaInicio" Nullable="true" />
+          <Property Type="DateTime" Name="FechaFin" Nullable="true" />
+          <Property Type="Int32" Name="IdTipoOferta" Nullable="true" />
+          <Property Type="String" Name="Requisitos" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Condiciones" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="InformacionAdicional" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="FechaCreacion" Nullable="true" />
+          <Property Type="Int32" Name="IdEstadoSistema" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PortalBecasModelStoreContainer" CdmEntityContainer="PortalBecasEntities">
+          <EntitySetMapping Name="Formulario">
+            <EntityTypeMapping TypeName="PortalBecasModel.Formulario">
+              <MappingFragment StoreEntitySet="Formulario">
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="IdItem" ColumnName="IdItem" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="IdTipoControl" ColumnName="IdTipoControl" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormularioTemporal">
+            <EntityTypeMapping TypeName="PortalBecasModel.FormularioTemporal">
+              <MappingFragment StoreEntitySet="FormularioTemporal">
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="IdItem" ColumnName="IdItem" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="IdTipoControl" ColumnName="IdTipoControl" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RespuestaTemporal">
+            <EntityTypeMapping TypeName="PortalBecasModel.RespuestaTemporal">
+              <MappingFragment StoreEntitySet="RespuestaTemporal">
+                <ScalarProperty Name="IdRespuesta" ColumnName="IdRespuesta" />
+                <ScalarProperty Name="IdItem" ColumnName="IdItem" />
+                <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spCrearFormularioProceso" FunctionName="PortalBecasModel.Store.spCrearFormularioProceso" />
+          <FunctionImportMapping FunctionImportName="spEliminarItemFormularioTemporal" FunctionName="PortalBecasModel.Store.spEliminarItemFormularioTemporal" />
+          <FunctionImportMapping FunctionImportName="spInsertarItemFormularioTemporal" FunctionName="PortalBecasModel.Store.spInsertarItemFormularioTemporal" />
+          <FunctionImportMapping FunctionImportName="spObtenerFormularioTemporal" FunctionName="PortalBecasModel.Store.spObtenerFormularioTemporal">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PortalBecasModel.spObtenerFormularioTemporal_Result">
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="IdItem" ColumnName="IdItem" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="IdTipoControl" ColumnName="IdTipoControl" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spObtenerRespuestaItem" FunctionName="PortalBecasModel.Store.spObtenerRespuestaItem">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PortalBecasModel.spObtenerRespuestaItem_Result">
+                <ScalarProperty Name="IdRespuesta" ColumnName="IdRespuesta" />
+                <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spObtenerTipoControl" FunctionName="PortalBecasModel.Store.spObtenerTipoControl">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PortalBecasModel.spObtenerTipoControl_Result">
+                <ScalarProperty Name="IdTipoControl" ColumnName="IdTipoControl" />
+                <ScalarProperty Name="TipoControl" ColumnName="TipoControl" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spCalificarItems" FunctionName="PortalBecasModel.Store.spCalificarItems" />
+          <FunctionImportMapping FunctionImportName="spConsultarFormulario" FunctionName="PortalBecasModel.Store.spConsultarFormulario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PortalBecasModel.spConsultarFormulario_Result">
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spCrearFormularioSolicitante" FunctionName="PortalBecasModel.Store.spCrearFormularioSolicitante" />
+          <FunctionImportMapping FunctionImportName="spEliminarFormulario" FunctionName="PortalBecasModel.Store.spEliminarFormulario" />
+          <FunctionImportMapping FunctionImportName="spConsultarUsuario" FunctionName="PortalBecasModel.Store.spConsultarUsuario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PortalBecasModel.spConsultarUsuario_Result">
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Oferta">
+            <EntityTypeMapping TypeName="PortalBecasModel.Oferta">
+              <MappingFragment StoreEntitySet="Oferta">
+                <ScalarProperty Name="IdEstadoSistema" ColumnName="IdEstadoSistema" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="InformacionAdicional" ColumnName="InformacionAdicional" />
+                <ScalarProperty Name="Condiciones" ColumnName="Condiciones" />
+                <ScalarProperty Name="Requisitos" ColumnName="Requisitos" />
+                <ScalarProperty Name="IdTipoOferta" ColumnName="IdTipoOferta" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdOferente" ColumnName="IdOferente" />
+                <ScalarProperty Name="IdOferta" ColumnName="IdOferta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Postulacion1Set">
+            <EntityTypeMapping TypeName="PortalBecasModel.Postulacion1">
+              <MappingFragment StoreEntitySet="Postulacion">
+                <ScalarProperty Name="IdEstadoPostulacion" ColumnName="IdEstadoPostulacion" />
+                <ScalarProperty Name="FechaPostulacion" ColumnName="FechaPostulacion" />
+                <ScalarProperty Name="IdOferta" ColumnName="IdOferta" />
+                <ScalarProperty Name="IdSolicitante" ColumnName="IdSolicitante" />
+                <ScalarProperty Name="IdPostulacion" ColumnName="IdPostulacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spAplicarOferta" FunctionName="PortalBecasModel.Store.spAplicarOferta" />
+          <FunctionImportMapping FunctionImportName="spConsultarOferta" FunctionName="PortalBecasModel.Store.spConsultarOferta">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PortalBecasModel.spConsultarOferta_Result">
+                <ScalarProperty Name="IdOferta" ColumnName="IdOferta" />
+                <ScalarProperty Name="IdOferente" ColumnName="IdOferente" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="IdTipoOferta" ColumnName="IdTipoOferta" />
+                <ScalarProperty Name="Requisitos" ColumnName="Requisitos" />
+                <ScalarProperty Name="Condiciones" ColumnName="Condiciones" />
+                <ScalarProperty Name="InformacionAdicional" ColumnName="InformacionAdicional" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="IdEstadoSistema" ColumnName="IdEstadoSistema" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spConsultarOfertaOferente" FunctionName="PortalBecasModel.Store.spConsultarOfertaOferente">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PortalBecasModel.spConsultarOfertaOferente_Result">
+                <ScalarProperty Name="IdOferta" ColumnName="IdOferta" />
+                <ScalarProperty Name="IdOferente" ColumnName="IdOferente" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="IdTipoOferta" ColumnName="IdTipoOferta" />
+                <ScalarProperty Name="Requisitos" ColumnName="Requisitos" />
+                <ScalarProperty Name="Condiciones" ColumnName="Condiciones" />
+                <ScalarProperty Name="InformacionAdicional" ColumnName="InformacionAdicional" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="IdEstadoSistema" ColumnName="IdEstadoSistema" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,89 @@
+﻿@model PruebaMvc.Models.Solicitante
+
+@{
+
+}
+
+@using (Html.BeginForm("BorrarSolicitante", "Usuario", FormMethod.Post))
+{
+    <br />
+    <div class="panel panel-default">
+        <div class="panel-heading"><h4>Eliminar usuario</h4></div>
+        <div class="panel-body">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <h4>Datos de usuario</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Usuario: @Html.LabelFor(model => model.NombreUsuario)
+                    </td>
+                    <td>
+                        Correo electrónico: @Html.LabelFor(model => model.CorreoElectronico)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Tipo de usuario: @Html.LabelFor(model => model.Rol)
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h4>Detalle usuario</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Nombres: @Html.LabelFor(model => model.nombres)
+                    </td>
+                    <td>
+                        Apellidos: @Html.LabelFor(model => model.apellidos)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Cargo: @Html.LabelFor(model => model)
+                    </td>
+                    <td>
+                        Sede: @Html.LabelFor(model => model.apellidos)
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        País:
+                        @Html.DropDownListFor(model => model.id_pais, ViewBag.Pais as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Tipo de entidad
+                        @Html.DropDownListFor(model => model.id_tipo_entidad, ViewBag.TipoOferente as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Descripción
+                        @Html.TextAreaFor(model => model.descripcion, 15, 8, new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn btn-success">Crear oferente</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+}
+
+
+
+
+
+
+

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PortalBecasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PortalBecas.dbo.Formulario' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Formulario">
+    <Key>
+      <PropertyRef Name="IdItem" />
+    </Key>
+    <Property Name="Cedula" Type="varchar" MaxLength="20" />
+    <Property Name="IdItem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item" Type="varchar" MaxLength="500" />
+    <Property Name="IdTipoControl" Type="int" />
+    <Property Name="Activo" Type="tinyint" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PortalBecas.dbo.FormularioTemporal' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="FormularioTemporal">
+    <Key>
+      <PropertyRef Name="IdItem" />
+    </Key>
+    <Property Name="Cedula" Type="varchar" MaxLength="20" />
+    <Property Name="IdItem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item" Type="varchar" MaxLength="500" />
+    <Property Name="IdTipoControl" Type="int" />
+    <Property Name="Activo" Type="tinyint" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PortalBecas.dbo.Oferta' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Oferta">
+    <Key>
+      <PropertyRef Name="IdOferta" />
+    </Key>
+    <Property Name="IdOferta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdOferente" Type="int" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="500" />
+    <Property Name="FechaInicio" Type="date" />
+    <Property Name="FechaFin" Type="date" />
+    <Property Name="IdTipoOferta" Type="int" />
+    <Property Name="Requisitos" Type="varchar" MaxLength="500" />
+    <Property Name="Condiciones" Type="varchar" MaxLength="500" />
+    <Property Name="InformacionAdicional" Type="varchar" MaxLength="500" />
+    <Property Name="FechaCreacion" Type="date" />
+    <Property Name="IdEstadoSistema" Type="int" />
+  </EntityType>
+  <EntityType Name="Postulacion">
+    <Key>
+      <PropertyRef Name="IdPostulacion" />
+    </Key>
+    <Property Name="IdPostulacion" Type="int" Nullable="false" />
+    <Property Name="IdSolicitante" Type="int" Nullable="false" />
+    <Property Name="IdOferta" Type="int" />
+    <Property Name="FechaPostulacion" Type="date" />
+    <Property Name="IdEstadoPostulacion" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'PortalBecas.dbo.RespuestaTemporal' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="RespuestaTemporal">
+    <Key>
+      <PropertyRef Name="IdRespuesta" />
+    </Key>
+    <Property Name="IdRespuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdItem" Type="int" />
+    <Property Name="Respuesta" Type="varchar" MaxLength="20" />
+    <Property Name="Activo" Type="tinyint" />
+  </EntityType>
+  <Function Name="spAplicarOferta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdOferta" Type="int" Mode="In" />
+    <Parameter Name="IdSolicitante" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spCalificarItems" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cedula" Type="varchar" Mode="In" />
+    <Parameter Name="IdItem" Type="int" Mode="In" />
+    <Parameter Name="Valor" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spConsultarFormulario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cedula" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spConsultarOferta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdOferta" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spConsultarOfertaOferente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdOferente" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spConsultarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NombreUsuario" Type="varchar" Mode="In" />
+    <Parameter Name="Clave" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spCrearFormularioProceso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cedula" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spCrearFormularioSolicitante" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cedula" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spEliminarFormulario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cedula" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spEliminarItemFormularioTemporal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdItem" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spInsertarItemFormularioTemporal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CedulaUsuario" Type="varchar" Mode="In" />
+    <Parameter Name="Item" Type="varchar" Mode="In" />
+    <Parameter Name="IdTipoControl" Type="int" Mode="In" />
+    <Parameter Name="Respuestas" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spObtenerFormularioTemporal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cedula" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spObtenerRespuestaItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdItem" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spObtenerTipoControl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="PortalBecasModelStoreContainer">
+    <EntitySet Name="Postulacion" EntityType="Self.Postulacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Formulario" EntityType="Self.Formulario" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Formulario].[Cedula] AS [Cedula], 
+    [Formulario].[IdItem] AS [IdItem], 
+    [Formulario].[Item] AS [Item], 
+    [Formulario].[IdTipoControl] AS [IdTipoControl], 
+    [Formulario].[Activo] AS [Activo]
+    FROM [dbo].[Formulario] AS [Formulario]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="FormularioTemporal" EntityType="Self.FormularioTemporal" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [FormularioTemporal].[Cedula] AS [Cedula], 
+    [FormularioTemporal].[IdItem] AS [IdItem], 
+    [FormularioTemporal].[Item] AS [Item], 
+    [FormularioTemporal].[IdTipoControl] AS [IdTipoControl], 
+    [FormularioTemporal].[Activo] AS [Activo]
+    FROM [dbo].[FormularioTemporal] AS [FormularioTemporal]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Oferta" EntityType="Self.Oferta" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Oferta].[IdOferta] AS [IdOferta], 
+    [Oferta].[IdOferente] AS [IdOferente], 
+    [Oferta].[Nombre] AS [Nombre], 
+    [Oferta].[Descripcion] AS [Descripcion], 
+    [Oferta].[FechaInicio] AS [FechaInicio], 
+    [Oferta].[FechaFin] AS [FechaFin], 
+    [Oferta].[IdTipoOferta] AS [IdTipoOferta], 
+    [Oferta].[Requisitos] AS [Requisitos], 
+    [Oferta].[Condiciones] AS [Condiciones], 
+    [Oferta].[InformacionAdicional] AS [InformacionAdicional], 
+    [Oferta].[FechaCreacion] AS [FechaCreacion], 
+    [Oferta].[IdEstadoSistema] AS [IdEstadoSistema]
+    FROM [dbo].[Oferta] AS [Oferta]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RespuestaTemporal" EntityType="Self.RespuestaTemporal" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RespuestaTemporal].[IdRespuesta] AS [IdRespuesta], 
+    [RespuestaTemporal].[IdItem] AS [IdItem], 
+    [RespuestaTemporal].[Respuesta] AS [Respuesta], 
+    [RespuestaTemporal].[Activo] AS [Activo]
+    FROM [dbo].[RespuestaTemporal] AS [RespuestaTemporal]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

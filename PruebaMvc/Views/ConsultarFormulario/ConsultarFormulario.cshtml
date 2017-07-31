@@ -1,0 +1,26 @@
+﻿@model PruebaMvc.Models.FormularioRespuesta
+@{
+    ViewBag.Title = "Consultar Formulario";
+}
+
+<br />
+<div class="panel panel-default">
+    <div class="panel-heading"><h4>Consultar Formulario</h4></div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            @foreach (var item in Model.lstItems)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.valor)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    </div>
+

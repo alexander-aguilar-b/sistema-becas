@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="ModelPruebaMvc">
+    <EntitySetMapping Name="Formulario">
+      <EntityTypeMapping TypeName="Model.Formulario">
+        <MappingFragment StoreEntitySet="Formulario">
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="IdItem" ColumnName="IdItem" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="IdTipoControl" ColumnName="IdTipoControl" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormularioTemporal">
+      <EntityTypeMapping TypeName="Model.FormularioTemporal">
+        <MappingFragment StoreEntitySet="FormularioTemporal">
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="IdItem" ColumnName="IdItem" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="IdTipoControl" ColumnName="IdTipoControl" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RespuestaTemporal">
+      <EntityTypeMapping TypeName="Model.RespuestaTemporal">
+        <MappingFragment StoreEntitySet="RespuestaTemporal">
+          <ScalarProperty Name="IdRespuesta" ColumnName="IdRespuesta" />
+          <ScalarProperty Name="IdItem" ColumnName="IdItem" />
+          <ScalarProperty Name="Respuesta" ColumnName="Respuesta" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="Model.Store.FuncionSplit" FunctionImportName="FuncionSplit">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.FuncionSplit_Result">
+          <ScalarProperty Name="splitdata" ColumnName="splitdata" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCrearFormularioProceso" FunctionName="Model.Store.spCrearFormularioProceso" />
+    <FunctionImportMapping FunctionImportName="spEliminarItemFormularioTemporal" FunctionName="Model.Store.spEliminarItemFormularioTemporal" />
+    <FunctionImportMapping FunctionImportName="spInsertarItemFormularioTemporal" FunctionName="Model.Store.spInsertarItemFormularioTemporal" />
+    <FunctionImportMapping FunctionImportName="spObtenerFormularioTemporal" FunctionName="Model.Store.spObtenerFormularioTemporal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.spObtenerFormularioTemporal_Result">
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="IdItem" ColumnName="IdItem" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="IdTipoControl" ColumnName="IdTipoControl" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spObtenerRespuestaItem" FunctionName="Model.Store.spObtenerRespuestaItem" />
+    <FunctionImportMapping FunctionImportName="spObtenerTipoControl" FunctionName="Model.Store.spObtenerTipoControl">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.spObtenerTipoControl_Result">
+          <ScalarProperty Name="IdTipoControl" ColumnName="IdTipoControl" />
+          <ScalarProperty Name="TipoControl" ColumnName="TipoControl" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
