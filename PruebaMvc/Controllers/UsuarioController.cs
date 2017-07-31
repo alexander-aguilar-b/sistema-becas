@@ -1,4 +1,6 @@
-﻿using PruebaMvc.Models;
+﻿using PruebaMvc.DAL;
+using PruebaMvc.Models;
+using PruebaMvc.ModelsService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,8 @@ namespace PruebaMvc.Controllers
 {
     public class UsuarioController : Controller
     {
+        OfertaDALServicio ofertaDALServicio = new OfertaDALServicio();
+
         // GET: Usuario
         public ActionResult CrearOferente()
         {
@@ -26,31 +30,17 @@ namespace PruebaMvc.Controllers
 
             ViewBag.TipoOferente = new SelectList(TipoOferente, "Value", "Text");
 
-            Oferente oferente = new Oferente();
-            return View(oferente);
-        }
-
-        public ActionResult GuardarOferente(Oferente oferente)
-        {
+            OferenteCrear oferente = new OferenteCrear();
             return View("~/Views/Usuario/CrearOferente.cshtml", oferente);
         }
 
-        public ActionResult CrearAdministrador()
+        public ActionResult GuardarOferente(OferenteCrear oferente)
         {
-            List<SelectListItem> Sede = new List<SelectListItem>();
-            Sede.Add(new SelectListItem() { Text = "Seleccione", Value = "0" });
-            Sede.Add(new SelectListItem() { Text = "Bogotá", Value = "1" });
-            Sede.Add(new SelectListItem() { Text = "Bucaramanga", Value = "2" });
-
-            ViewBag.Sede = new SelectList(Sede, "Value", "Text");
-
-            Administrador administrador = new Administrador();
-            return View(administrador);
-        }
-
-        public ActionResult GuardarAdministrador(Administrador administrador)
-        {
-            return View("~/Views/Usuario/CrearAdministrador.cshtml", administrador);
+            string resultado = "";
+            OferenteConsulta oferenteNuevo = new OferenteConsulta();
+            oferenteNuevo = ofertaDALServicio.crearOferente(oferente);
+            ViewBag.Message = "El oferente fue creado correctamente";
+            return View("~/Views/Usuario/ConsultarOferente.cshtml", oferenteNuevo);
         }
 
         public ActionResult CrearSolicitante()
@@ -97,13 +87,17 @@ namespace PruebaMvc.Controllers
 
             ViewBag.Ciudad = new SelectList(Ciudad, "Value", "Text");
 
-            Solicitante solicitante = new Solicitante();
-            return View(solicitante);
+            SolicitanteCrear solicitante = new SolicitanteCrear();
+            return View("~/Views/Usuario/CrearSolicitante.cshtml", solicitante);
         }
 
-        public ActionResult GuardarSolicitante(Solicitante solicitante)
+        public ActionResult GuardarSolicitante(SolicitanteCrear solicitante)
         {
-            return View("~/Views/Usuario/CrearSolicitante.cshtml", solicitante);
+            string resultado = "";
+            SolicitanteConsulta solicitanteNuevo = new SolicitanteConsulta();
+            solicitanteNuevo = ofertaDALServicio.crearSolicitante(solicitante);
+            ViewBag.Message = "El solicitante fue creado correctamente";
+            return View("~/Views/Usuario/ConsultarSolicitante.cshtml", solicitanteNuevo);
         }
 
         public ActionResult EliminarSolicitante()
@@ -115,6 +109,46 @@ namespace PruebaMvc.Controllers
         public ActionResult BorrarSolicitante(Solicitante solicitante)
         {
             return View("~/Views/Usuario/CrearSolicitante.cshtml", solicitante);
+        }
+
+        public ActionResult consultarOferente()
+        {
+            OferenteConsulta oferente = new OferenteConsulta();
+            return View("~/Views/Usuario/ConsultarOferente.cshtml", oferente);
+        }
+
+        public ActionResult consultarOferenteId(String idOferente)
+        {
+            OferenteConsulta oferente = new OferenteConsulta();
+            try
+            {
+                oferente = ofertaDALServicio.obtenerOferente(idOferente);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Message = "Hubo un error al aplicar a la oferta. " + ex.Message;
+            }
+            return View("~/Views/Usuario/ConsultarOferente.cshtml", oferente);
+        }
+
+        public ActionResult consultarSolicitante()
+        {
+            SolicitanteConsulta solicitante = new SolicitanteConsulta();
+            return View("~/Views/Usuario/ConsultarSolicitante.cshtml", solicitante);
+        }
+
+        public ActionResult consultarSolicitanteId(String idSolicitante)
+        {
+            SolicitanteConsulta solicitante = new SolicitanteConsulta();
+            try
+            {
+                solicitante = ofertaDALServicio.obtenerSolicitante(idSolicitante);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Message = "Hubo un error al aplicar a la oferta. " + ex.Message;
+            }
+            return View("~/Views/Usuario/ConsultarSolicitante.cshtml", solicitante);
         }
     }
 }

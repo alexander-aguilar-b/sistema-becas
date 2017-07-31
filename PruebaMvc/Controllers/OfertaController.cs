@@ -1,5 +1,4 @@
 ﻿using PruebaMvc.DAL;
-using PruebaMvc.Models;
 using PruebaMvc.ModelsService;
 using System;
 using System.Collections.Generic;
@@ -12,6 +11,8 @@ namespace PruebaMvc.Controllers
     public class OfertaController : Controller
     {
         OfertaDALServicio ofertaDALServicio = new OfertaDALServicio();
+
+        #region Experimento
 
         public ActionResult Index()
         {
@@ -59,33 +60,25 @@ namespace PruebaMvc.Controllers
         }
 
 
-        public ActionResult AplicarOferta(int idOferta, int idSolicitante, OfertaS oferta)
+        public ActionResult AplicarOferta(int idOferta, int idSolicitante)
         {
+            string resultado = "";
             try
             {
-                //ofertaDAL.aplicarOferta(idOferta, idSolicitante);
-                ViewBag.Message = "Ha aplicado a la oferta correctamente.";
+                resultado = ofertaDALServicio.aplicarOfertaId(idOferta.ToString(), idSolicitante.ToString());
+                ViewBag.Message = resultado;// "Ha aplicado a la oferta correctamente.";
             }
             catch(Exception ex)
             {
                 ViewBag.Message = "Hubo un error al aplicar a la oferta. " + ex.Message;
             }
-            return View("~/Views/Oferta/oferta.cshtml",oferta);
-        }
-
-        public ActionResult obtenerOferenteS()
-        {
-            try
-            {
-                OferenteS oferente = new OferenteS();
-                oferente = ofertaDALServicio.obtenerOferente("1");
-            }
-            catch (Exception ex)
-            {
-                ViewBag.Message = "Hubo un error al aplicar a la oferta. " + ex.Message;
-            }
             return View("~/Views/Oferta/oferta.cshtml");
         }
+
+        #endregion Experimento
+
+
+
 
     }
 }
