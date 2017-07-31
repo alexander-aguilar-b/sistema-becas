@@ -16,11 +16,12 @@ namespace PruebaMvc
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                //defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-                //defaults: new { controller = "Consulta", action = "Mostrar", id = UrlParameter.Optional }
-                //defaults: new { controller = "AgregarFormulario", action = "Agregar", id = UrlParameter.Optional }
-                defaults: new { controller = "Inicio", action = "Inicio", id = UrlParameter.Optional }
-            );
+				//defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+				//defaults: new { controller = "Consulta", action = "Mostrar", id = UrlParameter.Optional }
+				//defaults: new { controller = "AgregarFormulario", action = "Agregar", id = UrlParameter.Optional }
+				//defaults: new { controller = "Inicio", action = "Inicio", id = UrlParameter.Optional }
+				defaults: new { controller = "Autenticacion", action = "Login", id = UrlParameter.Optional }
+			);
         }
     }
 }

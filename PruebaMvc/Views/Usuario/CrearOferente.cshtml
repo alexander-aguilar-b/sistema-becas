@@ -1,77 +1,174 @@
 ﻿@model PruebaMvc.Models.Oferente
 
 @{
-    SelectList lstPais = ViewBag.Pais;
-    SelectList lstTipoOferente = ViewBag.TipoOferente;
+	SelectList lstPais = ViewBag.Pais;
+	SelectList lstTipoOferente = ViewBag.TipoOferente;
 }
 
 @using (Html.BeginForm("GuardarOferente", "Usuario", FormMethod.Post))
 {
-    <br />
-    <div class="panel panel-default">
-        <div class="panel-heading"><h4>Creación de cuenta: oferente</h4></div>
-        <div class="panel-body">
-            <table>
-                <tr>
-                    <td colspan="2">
-                        <h4>Datos de usuario</h4>
-                    </td>
-                </tr>
-                <tr>                                                                                                                                               
-                    <td>
-                        Usuario: @Html.EditorFor(model => model.NombreUsuario, new { @required = true })
-                    </td>
-                    <td>
-                        Correo electrónico: @Html.EditorFor(model => model.CorreoElectronico)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Contraseña: @Html.EditorFor(model => model.Clave)
-                    </td>
-                    <td>
-                        Confirmar contraseña: @Html.EditorFor(model => model.ConfirmarClave)
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <h4>Datos de oferente</h4>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Nit: @Html.EditorFor(model => model.nit)
-                    </td>
-                    <td>
-                        Nombre: @Html.EditorFor(model => model.nombre)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        País: 
-                        @Html.DropDownListFor(model => model.id_pais, ViewBag.Pais as IEnumerable<SelectListItem>, new { @class = "form-control" })
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Tipo de entidad
-                        @Html.DropDownListFor(model => model.id_tipo_entidad, ViewBag.TipoOferente as IEnumerable<SelectListItem>, new { @class = "form-control" })
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Descripción
-                        @Html.TextAreaFor(model => model.descripcion,15,8,new { @class = "form-control" })
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button type="submit" class="btn btn-success">Crear oferente</button>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
+	<br />
+	<div class="panel panel-default">
+		<div class="panel-heading"><h4>Creación de cuenta: Oferente</h4></div>
+		<div class="container">
+			<h4>Datos de usuario</h4>
+			<div class="row top-buffer">
+				@*First Row*@
+				<div class="form-group">
+					<label class="col-sm-2">Usuario</label>
+					<div class="col-sm-4 input-append">
+						@Html.EditorFor(model => model.NombreUsuario, new { htmlAttributes = new { @class = "form-control" } })
+					</div>
+					<label class="col-sm-2">Correo Electrónico:</label>
+					<div class="col-sm-4">
+						@Html.EditorFor(model => model.CorreoElectronico, new { htmlAttributes = new { @class = "form-control" } })
+					</div>
+				</div>
+			</div>
+
+			@*Second Row*@
+			<div class="row top-buffer">
+				<div class="form-group">
+					<label class="col-sm-2">Contraseña:</label>
+					<div class="col-sm-4">
+						@Html.EditorFor(model => model.Clave, new { htmlAttributes = new { @class = "form-control" } })
+					</div>
+					<label class="col-sm-2">Confirmar contraseña:</label>
+					<div class="col-sm-4">
+						@Html.EditorFor(model => model.ConfirmarClave, new { htmlAttributes = new { @class = "form-control" } })
+					</div>
+				</div>
+			</div>
+
+			<hr />
+		</div>
+
+		<div class="container">
+			<h4>Datos de oferente</h4>
+
+			<div class="row top-buffer">
+				@*First Row*@
+				<div class="form-group">
+					<label class="col-sm-2">Nit:</label>
+					<div class="col-sm-4 input-append">
+						@Html.EditorFor(model => model.nit, new { htmlAttributes = new { @class = "form-control" } })
+					</div>
+					<label class="col-sm-2">Nombre:</label>
+					<div class="col-sm-4">
+						@Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+					</div>
+				</div>
+			</div>			
+
+			<div class="row top-buffer">
+				@*Second Row*@
+				<div class="form-group">
+					<label class="col-sm-2">País:</label>
+					<div class="col-sm-4 input-append">
+						@Html.DropDownListFor(model => model.id_pais, ViewBag.Pais as IEnumerable<SelectListItem>, new { @class = "form-control" })
+					</div>
+
+					<label class="col-sm-2">Tipo de entidad:</label>
+					<div class="col-sm-4">
+						@Html.DropDownListFor(model => model.id_tipo_entidad, ViewBag.TipoOferente as IEnumerable<SelectListItem>, new { @class = "form-control" })
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="container">
+			<div class="row top-buffer">
+				@*Second Row*@
+				<div class="form-group">					
+					<label class="col-sm-2">Descripción:</label>
+					<div class="col-sm-10">
+						@Html.TextAreaFor(model => model.descripcion, 15, 100, new { @class = "form-control width-textarea" })
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<hr />
+
+		<div>
+			<button type="submit" class="btn btn-primary">Crear oferente</button>
+			<a class="btn btn-primary" href="@Url.Action("", "")">Cancelar</a>            
+		</div>
+
+		<br />
+
+
+	</div>
+
+	@*<div class="panel-body">
+
+
+
+
+
+		<table>
+			<tr>
+				<td colspan="2">
+					<h4>Datos de usuario</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Usuario: @Html.EditorFor(model => model.NombreUsuario, new { @required = true })
+				</td>
+				<td>
+					Correo electrónico: @Html.EditorFor(model => model.CorreoElectronico)
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Contraseña: @Html.EditorFor(model => model.Clave)
+				</td>
+				<td>
+					Confirmar contraseña: @Html.EditorFor(model => model.ConfirmarClave)
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<h4>Datos de oferente</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Nit: @Html.EditorFor(model => model.nit)
+				</td>
+				<td>
+					Nombre: @Html.EditorFor(model => model.nombre)
+				</td>
+			</tr>
+			<tr>
+				<td>
+					País:
+					@Html.DropDownListFor(model => model.id_pais, ViewBag.Pais as IEnumerable<SelectListItem>, new { @class = "form-control" })
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Tipo de entidad
+					@Html.DropDownListFor(model => model.id_tipo_entidad, ViewBag.TipoOferente as IEnumerable<SelectListItem>, new { @class = "form-control" })
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Descripción
+					@Html.TextAreaFor(model => model.descripcion, 15, 8, new { @class = "form-control" })
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button type="submit" class="btn btn-success">Crear oferente</button>
+				</td>
+			</tr>
+		</table>
+	</div>*@
+
 }
 
 

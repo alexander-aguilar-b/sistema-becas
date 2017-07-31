@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Sistema Becas</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
@@ -17,8 +17,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Inicio", "Inicio", "Inicio", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Cerrar Sesion", "LogOff", "Autenticacion", new { area = "" }, new { @class = "navbar-brand" })
+				@if (User.Identity.IsAuthenticated)
+				{
+					@Html.ActionLink("Inicio", "Inicio", "Inicio", new { area = "" }, new { @class = "navbar-brand" })
+					@Html.ActionLink("Cerrar Sesión", "LogOff", "Autenticacion", new { area = "" }, new { @class = "navbar-brand" })
+				}
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -31,11 +34,51 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - ECOS | CraftTech</p>
         </footer>
     </div>
 
+	
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+	<script src="~/Scripts/bootstrap.min.js"></script>
+	<script src="~/Scripts/jquery.validate.js"></script>    
+	<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			//$('.input-validation-error').parents('.form-group').addClass('has-error');
+			//$('.field-validation-error').addClass('alert-danger');
+			//$('.field-validation-error').addClass('from-control');
+			
+		});
+
+
+		//var form = $(form)
+		//	, formData = $.data(form[0])
+		//	, settings = formData.validator.settings
+		//	// Store existing event handlers in local variables
+		//	, oldErrorPlacement = settings.errorPlacement
+		//	, oldSuccess = settings.success;
+
+		//settings.errorPlacement = function (label, element) {
+
+		//	// Call old handler so it can update the HTML
+		//	oldErrorPlacement(label, element);
+
+		//	// Add Bootstrap classes to newly added elements
+		//	label.parents('.form-group').addClass('has-error1');
+		//	label.addClass('text-danger1');
+		//};
+
+		//settings.success = function (label) {
+		//	// Remove error class from <div class="form-group">, but don't worry about
+		//	// validation error messages as the plugin is going to remove it anyway
+		//	label.parents('.form-group').removeClass('has-error1');
+
+		//	// Call old handler to do rest of the work
+		//	oldSuccess(label);
+		//};
+
+	</script>
+	
 </body>
 </html>

@@ -12,20 +12,22 @@
     <div class="panel panel-default" style="width:30%">
         <div class="panel-heading">Login</div>
         <div class="panel-body">
-            <div>
-                Nombre usuario
-            </div>
-            <div>
+            
+            <div class="form-group">				
+				<div>
+					Nombre usuario
+				</div>
                 @Html.EditorFor(model => model.NombreUsuario)
-                @Html.ValidationMessageFor(model => model.NombreUsuario)
+                @Html.ValidationMessageFor(model => model.NombreUsuario, "",  new { @class = "text-danger" })
             </div>
 
-            <div>
-                Contraseña
-            </div>
-            <div>
+            
+            <div class="form-group">
+				<div>
+					Contraseña
+				</div>
                 @Html.PasswordFor(model => model.Clave)
-                @Html.ValidationMessageFor(model => model.Clave)
+                @Html.ValidationMessageFor(model => model.Clave, "",  new { @class = "text-danger" })
             </div>
             <br />
             <p>

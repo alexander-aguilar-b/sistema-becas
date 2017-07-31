@@ -16,3 +16,16 @@ textarea {
     max-width: 280px;
 }
 
+.top-buffer {
+	margin-top: 20px;
+}
+
+.textAreaOferente {
+	max-width :93%;
+
+}
+
+.width-textarea {
+	max-width: 93% !important
+}
+
