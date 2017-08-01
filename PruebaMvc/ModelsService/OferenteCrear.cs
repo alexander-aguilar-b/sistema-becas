@@ -14,6 +14,7 @@ namespace PruebaMvc.ModelsService
 
 		[Required(ErrorMessage = "El correo electrónico es requerido")]
 		[Display(Name = "Correo Electrónico")]
+		[RegularExpression(@"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}", ErrorMessage = "El correo electrónico no tiene el formato adecuado")]
 		public string correoElectronico { get; set; }
 
 		[Required(ErrorMessage = "La contraseña es requerida")]
