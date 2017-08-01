@@ -1,8 +1,10 @@
-﻿@model PruebaMvc.Models.Oferente
+﻿@model PruebaMvc.ModelsService.OferenteCrear
+@using PruebaMvc.UtilidadesUI
 
 @{
 	SelectList lstPais = ViewBag.Pais;
 	SelectList lstTipoOferente = ViewBag.TipoOferente;
+	ViewBag.Title = "Crear Oferente";
 }
 
 @using (Html.BeginForm("GuardarOferente", "Usuario", FormMethod.Post))
@@ -15,13 +17,18 @@
 			<div class="row top-buffer">
 				@*First Row*@
 				<div class="form-group">
-					<label class="col-sm-2">Usuario</label>
+					@*<label class="col-sm-2">Usuario</label>*@
+					@Html.RequiredLabelFor(model => model.nombreUsuario, new { @class= "col-sm-2" })
 					<div class="col-sm-4 input-append">
-						@Html.EditorFor(model => model.NombreUsuario, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.EditorFor(model => model.nombreUsuario, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.nombreUsuario, "", new { @class = "text-danger" })
 					</div>
-					<label class="col-sm-2">Correo Electrónico:</label>
+					@*<label class="col-sm-2">Correo Electrónico:</label>*@
+					@Html.RequiredLabelFor(model => model.correoElectronico, new { @class = "col-sm-2" })
 					<div class="col-sm-4">
-						@Html.EditorFor(model => model.CorreoElectronico, new { htmlAttributes = new { @class = "form-control" } })
+						@*@Html.EditorFor(model => model.CorreoElectronico, new { htmlAttributes = new { @class = "form-control" } })*@
+						@Html.EditorFor(model => model.correoElectronico, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.correoElectronico, "", new { @class = "text-danger" })
 					</div>
 				</div>
 			</div>
@@ -29,13 +36,19 @@
 			@*Second Row*@
 			<div class="row top-buffer">
 				<div class="form-group">
-					<label class="col-sm-2">Contraseña:</label>
+					@*<label class="col-sm-2">Contraseña:</label>*@
+					@Html.RequiredLabelFor(model => model.contrasena, new { @class = "col-sm-2" })
 					<div class="col-sm-4">
-						@Html.EditorFor(model => model.Clave, new { htmlAttributes = new { @class = "form-control" } })
+						@*@Html.EditorFor(model => model.Clave, new { htmlAttributes = new { @class = "form-control" } })*@
+						@Html.PasswordFor(model => model.contrasena, new { @class = "form-control" })
+						@Html.ValidationMessageFor(model => model.contrasena, "", new { @class = "text-danger" })
 					</div>
-					<label class="col-sm-2">Confirmar contraseña:</label>
+					@*<label class="col-sm-2">Confirmar contraseña:</label>*@
+					@Html.RequiredLabelFor(model => model.confirmarContrasena, new { @class = "col-sm-2" })
 					<div class="col-sm-4">
-						@Html.EditorFor(model => model.ConfirmarClave, new { htmlAttributes = new { @class = "form-control" } })
+						@*@Html.EditorFor(model => model.ConfirmarClave, new { htmlAttributes = new { @class = "form-control" } })*@
+						@Html.PasswordFor(model => model.confirmarContrasena, new { @class = "form-control" })
+						@Html.ValidationMessageFor(model => model.confirmarContrasena, "", new { @class = "text-danger" })
 					</div>
 				</div>
 			</div>
@@ -49,13 +62,17 @@
 			<div class="row top-buffer">
 				@*First Row*@
 				<div class="form-group">
-					<label class="col-sm-2">Nit:</label>
+					@Html.RequiredLabelFor(model => model.nit, new { @class = "col-sm-2" })
+					@*<label class="col-sm-2">Nit:</label>*@
 					<div class="col-sm-4 input-append">
 						@Html.EditorFor(model => model.nit, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.nit, "", new { @class = "text-danger" })
 					</div>
-					<label class="col-sm-2">Nombre:</label>
+					@*<label class="col-sm-2">Nombre:</label>*@
+					@Html.RequiredLabelFor(model => model.nit, new { @class = "col-sm-2" })
 					<div class="col-sm-4">
 						@Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+						@Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
 					</div>
 				</div>
 			</div>			
@@ -63,14 +80,18 @@
 			<div class="row top-buffer">
 				@*Second Row*@
 				<div class="form-group">
-					<label class="col-sm-2">País:</label>
+					@*<label class="col-sm-2">País:</label>*@
+					@Html.RequiredLabelFor(model => model.pais, new { @class = "col-sm-2" })
 					<div class="col-sm-4 input-append">
-						@Html.DropDownListFor(model => model.id_pais, ViewBag.Pais as IEnumerable<SelectListItem>, new { @class = "form-control" })
+						@Html.DropDownListFor(model => model.pais, ViewBag.Pais as IEnumerable<SelectListItem>, new { @class = "form-control" })
+						@Html.ValidationMessageFor(model => model.pais, "", new { @class = "text-danger" })
 					</div>
 
-					<label class="col-sm-2">Tipo de entidad:</label>
+					@*<label class="col-sm-2">Tipo de entidad:</label>*@
+					@Html.RequiredLabelFor(model => model.tipoEntidad, new { @class = "col-sm-2" })
 					<div class="col-sm-4">
-						@Html.DropDownListFor(model => model.id_tipo_entidad, ViewBag.TipoOferente as IEnumerable<SelectListItem>, new { @class = "form-control" })
+						@Html.DropDownListFor(model => model.tipoEntidad, ViewBag.TipoOferente as IEnumerable<SelectListItem>, new { @class = "form-control" })
+						@Html.ValidationMessageFor(model => model.tipoEntidad, "", new { @class = "text-danger" })
 					</div>
 				</div>
 			</div>
@@ -94,7 +115,7 @@
 
 		<div>
 			<button type="submit" class="btn btn-primary">Crear oferente</button>
-			<a class="btn btn-primary" href="@Url.Action("", "")">Cancelar</a>            
+			<a class="btn btn-primary" href="@Url.Action("CrearUsuarios", "Inicio")">Cancelar</a>            
 		</div>
 
 		<br />

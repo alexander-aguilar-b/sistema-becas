@@ -2,17 +2,48 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace PruebaMvc.ModelsService
 {
     public class OferenteCrear
     {
-        public string correoElectronico { get; set; }
-        public string contrasena { get; set; }
-        public string nombre { get; set; }
-        public string nit { get; set; }
+		[Required(ErrorMessage ="El nombre de usuario es requerido")]
+		[Display(Name ="Usuario")]
+		public string nombreUsuario { get; set; }
+
+		[Required(ErrorMessage = "El correo electrónico es requerido")]
+		[Display(Name = "Correo Electrónico")]
+		public string correoElectronico { get; set; }
+
+		[Required(ErrorMessage = "La contraseña es requerida")]
+		[Display(Name = "Contraseña")]
+		public string contrasena { get; set; }
+
+		[Required(ErrorMessage = "El nombre es requerido")]
+
+		[Display(Name = "Nombre")]
+		public string nombre { get; set; }
+
+		[Required(ErrorMessage = "El NIT es requerido")]
+		[Display(Name = "NIT")]
+		public string nit { get; set; }
+
         public string descripcion { get; set; }
-        public int tipoEntidad { get; set; }
-        public int pais { get; set; }
-    }
+
+		[Required(ErrorMessage = "El tipo de entidad es requerido")]
+		[Range(1, int.MaxValue, ErrorMessage = "El tipo de entidad es requerido")]
+		[Display(Name = "Tipo Entidad")]
+		public int tipoEntidad { get; set; }
+
+		[Required(ErrorMessage = "El pais es requerido")]
+		[Range(1, int.MaxValue, ErrorMessage = "El pais es requerido")]
+		[Display(Name = "Pais")]
+		public int pais { get; set; }
+
+		[Required(ErrorMessage = "La confirmación de contraseña es requerida")]
+		[Compare("contrasena", ErrorMessage ="Las contraseñas no coinciden")]
+		[Display(Name = "Confirmar Contraseña")]
+		public string confirmarContrasena { get; set; }
+	}
 }

@@ -8,19 +8,27 @@ using System.Net;
 using System.Text;
 using System.Web;
 using System.Web.Script.Serialization;
+using System.Configuration;
 
 namespace PruebaMvc.DAL
 {
     public class OfertaDALServicio
     {
-        #region Experimento
-        public List<OfertaS> obtenerListaOferta()
+		public string RestAPIBaseURL {
+			get
+			{
+				return ConfigurationManager.AppSettings["rutaBaseRESTAPI"];
+			}
+		 }
+
+		#region Experimento
+		public List<OfertaS> obtenerListaOferta()
         {
             List<OfertaS> oferente = new List<OfertaS>();
 
             try
             {
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:8080/portal-becas/spring/announcements/");
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(string.Concat(RestAPIBaseURL, "portal-becas/spring/announcements/"));
                 httpWebRequest.ContentType = "application/json";
                 httpWebRequest.Method = "GET";
 
@@ -45,7 +53,7 @@ namespace PruebaMvc.DAL
 
             try
             {
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:8080/portal-becas/spring/announcements/offerers/" + idOferente);
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(string.Concat(RestAPIBaseURL, "portal-becas/spring/announcements/offerers/", idOferente));
                 httpWebRequest.ContentType = "application/json";
                 httpWebRequest.Method = "GET";
 
@@ -70,7 +78,7 @@ namespace PruebaMvc.DAL
 
             try
             {
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:8080/portal-becas/spring/announcements/" + idOferta);
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(string.Concat(RestAPIBaseURL, "portal-becas/spring/announcements/", idOferta));
                 httpWebRequest.ContentType = "application/json";
                 httpWebRequest.Method = "GET";
 
@@ -96,7 +104,7 @@ namespace PruebaMvc.DAL
 
             try
             {
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:8080/portal-becas/spring/application/");
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(string.Concat(RestAPIBaseURL, "portal-becas/spring/application/"));
                 httpWebRequest.ContentType = "application/json";
                 httpWebRequest.Method = "POST";
 
@@ -132,7 +140,7 @@ namespace PruebaMvc.DAL
 
             try
             {
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:8080/portal-becas/spring/offerers/" + idOferente); //+ idOferente);
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(string.Concat(RestAPIBaseURL, "portal-becas/spring/offerers/", idOferente)); //+ idOferente);
                 httpWebRequest.ContentType = "application/json";
                 httpWebRequest.Method = "GET";
 
@@ -157,7 +165,7 @@ namespace PruebaMvc.DAL
 
             try
             {
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:8080/portal-becas/spring/applicant/" + idSolicitante); //+ idOferente);
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(string.Concat(RestAPIBaseURL, "portal-becas/spring/applicant/",  idSolicitante)); //+ idOferente);
                 httpWebRequest.ContentType = "application/json";
                 httpWebRequest.Method = "GET";
 
@@ -183,7 +191,7 @@ namespace PruebaMvc.DAL
 
             try
             {
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:8080/portal-becas/spring/offerers/");
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(string.Concat(RestAPIBaseURL, "portal-becas/spring/offerers/"));
                 httpWebRequest.ContentType = "application/json";
                 httpWebRequest.Method = "POST";
 
@@ -221,7 +229,7 @@ namespace PruebaMvc.DAL
 
             try
             {
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:8080/portal-becas/spring/applicant/");
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(string.Concat(RestAPIBaseURL, "portal-becas/spring/applicant/"));
                 httpWebRequest.ContentType = "application/json";
                 httpWebRequest.Method = "POST";
 

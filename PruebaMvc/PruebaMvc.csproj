@@ -133,6 +133,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\notifications.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -238,6 +239,7 @@
       <DependentUpon>ModeloPruebaMvc.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\ConsultarFormularioController.cs" />
+    <Compile Include="UtilidadesUI\CustomHtmlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

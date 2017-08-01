@@ -23,3 +23,11 @@ textarea {
 .width-textarea {
 	max-width: 93% !important
 }
+
+.text-error {
+	color: #b94a48;
+}
+
+.small-space {
+	padding-right : 5px;
+}
