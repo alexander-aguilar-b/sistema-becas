@@ -132,11 +132,6 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -177,10 +172,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloPruebaMvc.edmx</DependentUpon>
     </Compile>
-    <Compile Include="ModelsService\InfoUsuarioS.cs" />
-    <Compile Include="ModelsService\OferenteS.cs" />
+    <Compile Include="ModelsService\IdEstadoSistema.cs" />
+    <Compile Include="ModelsService\IdTipoDocumento.cs" />
+    <Compile Include="ModelsService\InfoUsuario.cs" />
+    <Compile Include="ModelsService\InfoUsuarioSolicitante.cs" />
+    <Compile Include="ModelsService\OferenteConsulta.cs" />
+    <Compile Include="ModelsService\OferenteCrear.cs" />
     <Compile Include="ModelsService\OfertaS.cs" />
-    <Compile Include="ModelsService\RolS.cs" />
+    <Compile Include="ModelsService\Pais.cs" />
+    <Compile Include="ModelsService\PaisNacimiento.cs" />
+    <Compile Include="ModelsService\Rol.cs" />
+    <Compile Include="ModelsService\Sexo.cs" />
+    <Compile Include="ModelsService\SolicitanteConsulta.cs" />
+    <Compile Include="ModelsService\SolicitanteCrear.cs" />
+    <Compile Include="ModelsService\TipoEntidad.cs" />
     <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\Etapa.cs" />
     <Compile Include="Models\ExperienciaLaboral.cs" />
@@ -255,11 +260,12 @@
     <Content Include="Views\Usuario\CrearOferente.cshtml" />
     <Content Include="Views\Oferta\ConsultarOferta.cshtml" />
     <Content Include="Views\Oferta\Oferta.cshtml" />
-    <Content Include="Views\Usuario\CrearAdministrador.cshtml" />
     <Content Include="Views\Usuario\CrearSolicitante.cshtml" />
     <Content Include="Views\Usuario\EliminarSolicitante.cshtml" />
     <Content Include="Views\Inicio\CrearFormularioDinamico.cshtml" />
     <Content Include="Views\Inicio\CrearUsuarios.cshtml" />
+    <Content Include="Views\Usuario\ConsultarOferente.cshtml" />
+    <Content Include="Views\Usuario\ConsultarSolicitante.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

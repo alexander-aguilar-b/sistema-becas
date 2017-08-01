@@ -1,4 +1,4 @@
-﻿@model PruebaMvc.Models.Solicitante
+﻿@model PruebaMvc.ModelsService.SolicitanteCrear
 
 @{
     SelectList lstSexo = ViewBag.Sexo; 
@@ -23,18 +23,15 @@
                 </tr>
                 <tr>
                     <td>
-                        Usuario: @Html.EditorFor(model => model.NombreUsuario, new { @required = true })
-                    </td>
-                    <td>
-                        Correo electrónico: @Html.EditorFor(model => model.CorreoElectronico)
+                        Correo electrónico: @Html.EditorFor(model => model.correoElectronico)
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Contraseña: @Html.EditorFor(model => model.Clave)
+                        Contraseña: @Html.EditorFor(model => model.contrasena)
                     </td>
                     <td>
-                        Confirmar contraseña: @Html.EditorFor(model => model.ConfirmarClave)
+                        Confirmar contraseña: @Html.EditorFor(model => model.contrasena)
                     </td>
                 </tr>
                 <tr>
@@ -44,15 +41,16 @@
                 </tr>
                 <tr>
                     <td>
-                        Documento: @Html.EditorFor(model => model.documento)
-                    </td>
-                    <td>
                         Tipo de documento: @Html.DropDownListFor(model => model.id_tipo_documento, ViewBag.TipoDocumento as IEnumerable<SelectListItem>, new { @class = "form-control" })
                     </td>
+                    <td>
+                        Documento: @Html.EditorFor(model => model.numero_documento)
+                    </td>
+
                 </tr>
                 <tr>
                     <td>
-                        Nombres:@Html.EditorFor(model => model.nombres)
+                        Nombres:@Html.EditorFor(model => model.nombre)
                     </td>
                     <td>
                         Apellidos:@Html.EditorFor(model => model.apellidos)
@@ -60,76 +58,22 @@
                 </tr>
                 <tr>
                     <td>
-                        Correo electrónico:@Html.EditorFor(model => model.correo_electronico)
-                    </td>
-                    <td>
-                        Dirección:@Html.EditorFor(model => model.direccion)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Teléfono:@Html.EditorFor(model => model.correo_electronico)
-                    </td>
-                    <td>
                         Sexo:@Html.DropDownListFor(model => model.sexo, ViewBag.Sexo as IEnumerable<SelectListItem>, new { @class = "form-control" })
-                    </td>
-                    <td>
-                        Estrato: @Html.EditorFor(model => model.estrato)
                     </td>
                 </tr>
                 <tr>
                     <td>
                         Tipo de población:@Html.DropDownListFor(model => model.id_tipo_poblacion, ViewBag.TipoPoblacion as IEnumerable<SelectListItem>, new { @class = "form-control" })
                     </td>
+                </tr>
+                <tr>
                     <td>
-                        Fecha de nacimiento:@Html.EditorFor(model => model.direccion)
+                        Pais nacimiento: @Html.DropDownListFor(model => model.pais_nacimiento, ViewBag.Pais as IEnumerable<SelectListItem>, new { @class = "form-control" })
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Pais nacimiento: @Html.DropDownListFor(model => model.id_pais_nacimiento, ViewBag.Pais as IEnumerable<SelectListItem>, new { @class = "form-control" })
-                    </td>
-                    <td>
-                        Departamento nacimiento: @Html.DropDownListFor(model => model.id_depatamento_nacimiento, ViewBag.Departamento as IEnumerable<SelectListItem>, new { @class = "form-control" })
-                    </td>
-                    <td>
-                        Ciudad nacimiento: @Html.DropDownListFor(model => model.id_ciudad_nacimiento, ViewBag.Ciudad as IEnumerable<SelectListItem>, new { @class = "form-control" })
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Pais residencia: @Html.DropDownListFor(model => model.id_pais_residencia, ViewBag.Pais as IEnumerable<SelectListItem>, new { @class = "form-control" })
-                    </td>
-                    <td>
-                        Departamento residencia: @Html.DropDownListFor(model => model.id_depatamento_residencia, ViewBag.Departamento as IEnumerable<SelectListItem>, new { @class = "form-control" })
-                    </td>
-                    <td>
-                        Ciudad residencia: @Html.DropDownListFor(model => model.id_ciudad_residencia, ViewBag.Ciudad as IEnumerable<SelectListItem>, new { @class = "form-control" })
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <h4>Información académica básica</h4>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <h4>Información académica superior</h4>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <h4>Información académica idiomas</h4>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <h4>Experiencia Laboral</h4>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <br />
+                        Pais residencia: @Html.DropDownListFor(model => model.pais_residencia, ViewBag.Pais as IEnumerable<SelectListItem>, new { @class = "form-control" })
                     </td>
                 </tr>
                 <tr>

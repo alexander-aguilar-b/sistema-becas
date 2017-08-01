@@ -1,0 +1,91 @@
+﻿@model PruebaMvc.ModelsService.SolicitanteConsulta
+@{
+
+}
+
+@using (Html.BeginForm("consultarSolicitanteId", "Usuario", FormMethod.Post))
+{
+    <div class="panel panel-default">
+        <div class="panel-heading"><h4>Consultar Solicitante</h4></div>
+        <div class="panel-body">
+            <table>
+                <tr>
+                    <td>
+                        Id Solicitante
+                    </td>
+                    <td>
+                        <input type="text" id="id_Oferente" name="idSolicitante">
+                    </td>
+                    <td colspan="2" align="left">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+<div class="panel-heading">
+    <h3>Consulta Solicitante</h3>
+</div>
+<div class="panel-body">
+
+    @if (Model != null)
+    {
+        <table class="table table-striped">
+            <tr>
+                <td>
+                    @Html.HiddenFor(model => model.nombre)
+                    Nombre: @Html.DisplayFor(model => model.nombre)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.HiddenFor(model => model.infoUsuario.apellidos)
+                    Apellidos: @Html.DisplayFor(model => model.infoUsuario.apellidos)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.HiddenFor(model => model.correoElectronico)
+                    Correo electrónico: @Html.DisplayFor(model => model.correoElectronico)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.HiddenFor(model => model.rol.nombre)
+                    Tipo Usuario: @Html.DisplayFor(model => model.rol.nombre)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.HiddenFor(model => model.idEstadoSistema.descripcion)
+                    Estado: @Html.DisplayFor(model => model.idEstadoSistema.descripcion)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.HiddenFor(model => model.infoUsuario.id_tipo_documento.descripcion)
+                   Tipo de documento: @Html.DisplayFor(model => model.infoUsuario.id_tipo_documento.descripcion)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.HiddenFor(model => model.infoUsuario.numero_documento)
+                    Número documento: @Html.DisplayFor(model => model.infoUsuario.numero_documento)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.HiddenFor(model => model.infoUsuario.sexo.descripcion)
+                    Sexo: @Html.DisplayFor(model => model.infoUsuario.sexo.descripcion)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.HiddenFor(model => model.infoUsuario.pais_nacimiento.nombre)
+                    Pais de nacimiento: @Html.DisplayFor(model => model.infoUsuario.pais_nacimiento.nombre)
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+}
