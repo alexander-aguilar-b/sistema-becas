@@ -13,6 +13,11 @@ namespace PruebaMvc.Controllers
     {
         OfertaDALServicio ofertaDALServicio = new OfertaDALServicio();
 
+		public UsuarioController()
+		{
+			ViewBag.ConsultaRealizada = false;
+		}
+
         // GET: Usuario
         public ActionResult CrearOferente()
         {
@@ -117,19 +122,33 @@ namespace PruebaMvc.Controllers
             return View("~/Views/Usuario/ConsultarOferente.cshtml", oferente);
         }
 
+		[HttpGet]
+		public ActionResult consultarOferenteId()
+		{
+			return View("ConsultarOferente");
+		}
+
+		[HttpPost]
         public ActionResult consultarOferenteId(String idOferente)
         {
+
             OferenteConsulta oferente = new OferenteConsulta();
             try
             {
                 oferente = ofertaDALServicio.obtenerOferente(idOferente);
-            }
+				ViewBag.ConsultaRealizada = true;
+			}
             catch (Exception ex)
             {
                 ViewBag.Message = "Hubo un error al aplicar a la oferta. " + ex.Message;
             }
+
+
+
             return View("~/Views/Usuario/ConsultarOferente.cshtml", oferente);
         }
+
+
 
         public ActionResult consultarSolicitante()
         {
@@ -137,13 +156,22 @@ namespace PruebaMvc.Controllers
             return View("~/Views/Usuario/ConsultarSolicitante.cshtml", solicitante);
         }
 
-        public ActionResult consultarSolicitanteId(String idSolicitante)
+		[HttpGet]
+		public ActionResult consultarSolicitanteId()
+		{
+			return View("ConsultarSolicitante");
+		}
+
+		[HttpPost]
+		public ActionResult consultarSolicitanteId(String idSolicitante)
         {
             SolicitanteConsulta solicitante = new SolicitanteConsulta();
+
             try
             {
                 solicitante = ofertaDALServicio.obtenerSolicitante(idSolicitante);
-            }
+				ViewBag.ConsultaRealizada = true;
+			}
             catch (Exception ex)
             {
                 ViewBag.Message = "Hubo un error al aplicar a la oferta. " + ex.Message;

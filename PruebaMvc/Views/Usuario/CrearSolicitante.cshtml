@@ -1,89 +1,203 @@
 ﻿@model PruebaMvc.ModelsService.SolicitanteCrear
+@using PruebaMvc.UtilidadesUI
 
 @{
-    SelectList lstSexo = ViewBag.Sexo; 
-    SelectList lstTipoDocumento = ViewBag.TipoDocumento;
-    SelectList lstTipoPoblacion = ViewBag.TipoPoblacion;
-    SelectList lstPais = ViewBag.Pais;
-    SelectList lstDepartamento = ViewBag.Departamento;
-    SelectList lstCiudad = ViewBag.Ciudad;
+	SelectList lstSexo = ViewBag.Sexo;
+	SelectList lstTipoDocumento = ViewBag.TipoDocumento;
+	SelectList lstTipoPoblacion = ViewBag.TipoPoblacion;
+	SelectList lstPais = ViewBag.Pais;
+	SelectList lstDepartamento = ViewBag.Departamento;
+	SelectList lstCiudad = ViewBag.Ciudad;
 }
 
 @using (Html.BeginForm("GuardarSolicitante", "Usuario", FormMethod.Post))
 {
-    <br />
-    <div class="panel panel-default">
-        <div class="panel-heading"><h4>Creación de cuenta: solicitante</h4></div>
-        <div class="panel-body">
-            <table>
-                <tr>
-                    <td colspan="2">
-                        <h4>Datos de usuario</h4>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Correo electrónico: @Html.EditorFor(model => model.correoElectronico)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Contraseña: @Html.EditorFor(model => model.contrasena)
-                    </td>
-                    <td>
-                        Confirmar contraseña: @Html.EditorFor(model => model.contrasena)
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <h4>Datos de solicitante</h4>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Tipo de documento: @Html.DropDownListFor(model => model.id_tipo_documento, ViewBag.TipoDocumento as IEnumerable<SelectListItem>, new { @class = "form-control" })
-                    </td>
-                    <td>
-                        Documento: @Html.EditorFor(model => model.numero_documento)
-                    </td>
+	<br />
+	<div class="panel panel-default">
+		<div class="panel-heading"><h4>Creación de cuenta: Solicitante</h4></div>
+		
+			<div class="container">
+				<h4>Datos de Usuario</h4>
+				<div class="row top-buffer">
+					@*First Row*@
+					<div class="form-group">
+						@Html.RequiredLabelFor(model => model.nombreUsuario, new { @class = "col-sm-2" })
+						<div class="col-sm-4 input-append">
+							@Html.EditorFor(model => model.nombreUsuario, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.nombreUsuario, "", new { @class = "text-danger" })
+						</div>
+						@Html.RequiredLabelFor(model => model.correoElectronico, new { @class = "col-sm-2" })
+						<div class="col-sm-4">
+							@Html.EditorFor(model => model.correoElectronico, new { htmlAttributes = new { @class = "form-control", placeholder = "correo@dominio.com" } })
+							@Html.ValidationMessageFor(model => model.correoElectronico, "", new { @class = "text-danger" })
+						</div>
+					</div>
+				</div>
 
-                </tr>
-                <tr>
-                    <td>
-                        Nombres:@Html.EditorFor(model => model.nombre)
-                    </td>
-                    <td>
-                        Apellidos:@Html.EditorFor(model => model.apellidos)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Sexo:@Html.DropDownListFor(model => model.sexo, ViewBag.Sexo as IEnumerable<SelectListItem>, new { @class = "form-control" })
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Tipo de población:@Html.DropDownListFor(model => model.id_tipo_poblacion, ViewBag.TipoPoblacion as IEnumerable<SelectListItem>, new { @class = "form-control" })
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Pais nacimiento: @Html.DropDownListFor(model => model.pais_nacimiento, ViewBag.Pais as IEnumerable<SelectListItem>, new { @class = "form-control" })
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Pais residencia: @Html.DropDownListFor(model => model.pais_residencia, ViewBag.Pais as IEnumerable<SelectListItem>, new { @class = "form-control" })
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button type="submit" class="btn btn-success">Crear</button>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
+				@*Second Row*@
+				<div class="row top-buffer">
+					<div class="form-group">
+						@Html.RequiredLabelFor(model => model.contrasena, new { @class = "col-sm-2" })
+						<div class="col-sm-4">
+							@Html.PasswordFor(model => model.contrasena, new { @class = "form-control" })
+							@Html.ValidationMessageFor(model => model.contrasena, "", new { @class = "text-danger" })
+						</div>
+						@Html.RequiredLabelFor(model => model.confirmarContrasena, new { @class = "col-sm-2" })
+						<div class="col-sm-4">
+							@Html.PasswordFor(model => model.confirmarContrasena, new { @class = "form-control" })
+							@Html.ValidationMessageFor(model => model.confirmarContrasena, "", new { @class = "text-danger" })
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr />
+			<div class="container">
+				<h4>Datos de Solicitante</h4>
+				@*First Row*@
+				<div class="row top-buffer">
+					<div class="form-group">
+						@Html.RequiredLabelFor(model => model.id_tipo_documento, new { @class = "col-sm-2" })
+						<div class="col-sm-4">
+							@Html.DropDownListFor(model => model.id_tipo_documento, ViewBag.TipoDocumento as IEnumerable<SelectListItem>, new { @class = "form-control" })
+							@Html.ValidationMessageFor(model => model.id_tipo_documento, "", new { @class = "text-danger" })
+						</div>
+
+						@Html.RequiredLabelFor(model => model.numero_documento, new { @class = "col-sm-2" })
+						<div class="col-sm-4">
+							@Html.EditorFor(model => model.numero_documento, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.numero_documento, "", new { @class = "text-danger" })
+						</div>
+					</div>
+				</div>
+				@*First Row*@
+				<div class="row top-buffer">
+					<div class="form-group">
+						@Html.RequiredLabelFor(model => model.nombre, new { @class = "col-sm-2" })
+						<div class="col-sm-4">
+							@Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })							
+							@Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+						</div>
+
+						@Html.RequiredLabelFor(model => model.apellidos, new { @class = "col-sm-2" })
+						<div class="col-sm-4">
+							@Html.EditorFor(model => model.apellidos, new { htmlAttributes = new { @class = "form-control" } })
+							@Html.ValidationMessageFor(model => model.apellidos, "", new { @class = "text-danger" })
+						</div>
+					</div>
+				</div>
+
+				<div class="row top-buffer">
+					<div class="form-group">
+						@Html.RequiredLabelFor(model => model.sexo, new { @class = "col-sm-2" })
+						<div class="col-sm-4">
+							@Html.DropDownListFor(model => model.sexo, ViewBag.Sexo as IEnumerable<SelectListItem>, new { @class = "form-control" })							
+							@Html.ValidationMessageFor(model => model.sexo, "", new { @class = "text-danger" })
+						</div>
+
+						@Html.RequiredLabelFor(model => model.id_tipo_poblacion, new { @class = "col-sm-2" })
+						<div class="col-sm-4">
+							@Html.DropDownListFor(model => model.id_tipo_poblacion, ViewBag.TipoPoblacion as IEnumerable<SelectListItem>, new { @class = "form-control" })
+							@Html.ValidationMessageFor(model => model.id_tipo_poblacion, "", new { @class = "text-danger" })
+						</div>
+					</div>
+				</div>
+
+				<div class="row top-buffer">
+					<div class="form-group">
+						@Html.RequiredLabelFor(model => model.pais_nacimiento, new { @class = "col-sm-2" })
+						<div class="col-sm-4">
+							@Html.DropDownListFor(model => model.pais_nacimiento, ViewBag.Pais as IEnumerable<SelectListItem>, new { @class = "form-control" })							
+							@Html.ValidationMessageFor(model => model.pais_nacimiento, "", new { @class = "text-danger" })
+						</div>
+
+						@Html.RequiredLabelFor(model => model.pais_residencia, new { @class = "col-sm-2" })
+						<div class="col-sm-4">
+							@Html.DropDownListFor(model => model.pais_residencia, ViewBag.Pais as IEnumerable<SelectListItem>, new { @class = "form-control" })							
+							@Html.ValidationMessageFor(model => model.pais_residencia, "", new { @class = "text-danger" })
+						</div>
+					</div>
+				</div>
+			</div>
+
+		
+		<div class="container">
+			<div class="form-group btn-container">
+				<button type="submit" class="btn btn-success">Crear Solicitante</button>
+				<a class="btn btn-primary" href="@Url.Action("CrearUsuarios", "Inicio")">Cancelar</a>
+			</div>
+		</div>
+	
+		@*End*@
+		@*<div class="panel-body">
+			<table>
+				<tr>
+					<td colspan="2">
+						<h4>Datos de usuario</h4>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Correo electrónico: @Html.EditorFor(model => model.correoElectronico)
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Contraseña: @Html.EditorFor(model => model.contrasena)
+					</td>
+					<td>
+						Confirmar contraseña: @Html.EditorFor(model => model.contrasena)
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<h4>Datos de solicitante</h4>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Tipo de documento: @Html.DropDownListFor(model => model.id_tipo_documento, ViewBag.TipoDocumento as IEnumerable<SelectListItem>, new { @class = "form-control" })
+					</td>
+					<td>
+						Documento: @Html.EditorFor(model => model.numero_documento)
+					</td>
+
+				</tr>
+				<tr>
+					<td>
+						Nombres:@Html.EditorFor(model => model.nombre)
+					</td>
+					<td>
+						Apellidos:@Html.EditorFor(model => model.apellidos)
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Sexo:@Html.DropDownListFor(model => model.sexo, ViewBag.Sexo as IEnumerable<SelectListItem>, new { @class = "form-control" })
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Tipo de población:@Html.DropDownListFor(model => model.id_tipo_poblacion, ViewBag.TipoPoblacion as IEnumerable<SelectListItem>, new { @class = "form-control" })
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Pais nacimiento: @Html.DropDownListFor(model => model.pais_nacimiento, ViewBag.Pais as IEnumerable<SelectListItem>, new { @class = "form-control" })
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Pais residencia: @Html.DropDownListFor(model => model.pais_residencia, ViewBag.Pais as IEnumerable<SelectListItem>, new { @class = "form-control" })
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button type="submit" class="btn btn-success">Crear</button>
+					</td>
+				</tr>
+			</table>
+		</div>*@
+	</div>
 }
 
 

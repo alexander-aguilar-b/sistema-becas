@@ -22,7 +22,6 @@ namespace PruebaMvc.ModelsService
 		public string contrasena { get; set; }
 
 		[Required(ErrorMessage = "El nombre es requerido")]
-
 		[Display(Name = "Nombre")]
 		public string nombre { get; set; }
 

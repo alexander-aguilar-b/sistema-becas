@@ -31,3 +31,21 @@ textarea {
 .small-space {
 	padding-right : 5px;
 }
+.tiny-space {
+	padding-right: 0px;
+}
+
+.btn-container {
+	padding-top: 50px !important;
+	float: right;
+	padding-right : 70px;
+}
+
+
+.width-columnKey {
+	width : 70px;
+}
+
+.width-columnValue {
+	width: 150px;
+}
